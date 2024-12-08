@@ -1,23 +1,21 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-import InputForm from './components/InputForm';
+import React from "react";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Chat from "./components/Chat";
 
-function App() {
+const App = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center', // Centrar horizontalmente
-        alignItems: 'center',    // Centrar verticalmente
-        height: '100vh',         // Asegura que ocupe toda la pantalla
-        backgroundColor: '#1E1E1E', // Fondo oscuro, similar al chat
-        margin: 0,
-        padding: 0,
-      }}
-    >
-      <InputForm />
+    <div className="h-screen flex flex-col bg-primary text-text">
+      <Header />
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar />
+        <div className="flex-1">
+          <Chat />
+        </div>
+      </div>
     </div>
+
   );
-}
+};
 
 export default App;
