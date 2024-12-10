@@ -9,18 +9,16 @@ async function loadModel() {
         console.error("Error al cargar el modelo:", error);
     }
 
-    // Cargar tokenizer
     const response = await fetch('../backend/tokenizer.json');
     const tokenizerJson = await response.json();
     tokenizer = new Tokenizer(tokenizerJson);
 
-    // Cargar labelEncoder que es la de tokenizar
     const labelResponse = await fetch('../backend/responses_tokenizer.json');
     const labelJson = await labelResponse.json();
     labelEncoder = labelJson.word_index;
 }
 
-// Para tokenizar el texto en JavaScript
+// Función para tokenizar el texto en JavaScript
 class Tokenizer {
     constructor(tokenizerJson) {
         this.wordIndex = tokenizerJson.word_index || {};
@@ -45,7 +43,6 @@ async function sendMessage() {
     const chatBox = document.getElementById('chat-box');
 
     chatBox.innerHTML += `<div><strong>Usuario:</strong> ${userInput}</div>`;
-
     const prediction = await predictResponse(userInput);
 
     chatBox.innerHTML += `<div><strong>Chatbot:</strong> ${prediction}</div>`;
@@ -62,17 +59,28 @@ async function predictResponse(input) {
 
     const sequence = tokenizer.texts_to_sequences([input]);
 
-    const paddedInput = tf.tensor([sequence[0]], [1, sequence[0].length]);
+    const maxLength = 10;
+    const paddedSequence = padSequence(sequence, maxLength);
 
-    console.log('Entrada con padding:', paddedInput.shape);
+    const paddedInput = tf.tensor([paddedSequence]);
 
-    // Hacer la predicción
-    const result = model.predict(paddedInput);
+     console.log('Entrada con padding:', paddedInput.shape);
+
+     const result = model.predict(paddedInput);
     const predictedClass = result.argMax(1).dataSync()[0];
-
 
     const response = labelEncoder[predictedClass];
     return response;
+}
+
+function padSequence(sequence, maxLength) {
+    const padded = sequence[0];
+    if (padded.length < maxLength) {
+        const padding = Array(maxLength - padded.length).fill(0);
+        return padded.concat(padding);
+    } else {
+        return padded.slice(0, maxLength);
+    }
 }
 
 loadModel();
