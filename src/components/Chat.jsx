@@ -5,12 +5,20 @@ import {
   MessageList,
   Message,
   MessageInput,
+  Avatar,
+  ConversationHeader,
+  StarButton,
+  InfoButton,
 } from "@chatscope/chat-ui-kit-react";
 import * as use from "@tensorflow-models/universal-sentence-encoder";
 import * as tf from "@tensorflow/tfjs";
 import "@tensorflow/tfjs-backend-webgl";
 import { faqData } from "../models/faqData";
 import { evaluate } from "mathjs";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const Chat = () => {
   const [messages, setMessages] = useState([
@@ -22,21 +30,42 @@ const Chat = () => {
   ]);
   const [model, setModel] = useState(null);
   const [questionEmbeddings, setQuestionEmbeddings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Cargar el modelo y los embeddings al montar el componente
   useEffect(() => {
     const loadModelAndEmbeddings = async () => {
-      await tf.setBackend("webgl");
-      await tf.ready();
-      const loadedModel = await use.load();
-      setModel(loadedModel);
+      // Mostrar el loader de SweetAlert2
+      MySwal.fire({
+        title: "Cargando...",
+        text: "Por favor espera mientras se carga el modelo",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: () => {
+          MySwal.showLoading();
+        },
+      });
 
-      const questions = faqData.map((item) => item.question);
-      const embeddings = await loadedModel.embed(questions);
-      setQuestionEmbeddings(embeddings);
+      try {
+        await tf.setBackend("webgl");
+        await tf.ready();
+        const loadedModel = await use.load();
+        setModel(loadedModel);
 
-      console.log("Modelo y embeddings cargados");
+        const questions = faqData.map((item) => item.question);
+        const embeddings = await loadedModel.embed(questions);
+        setQuestionEmbeddings(embeddings);
+
+        console.log("Modelo y embeddings cargados");
+      } catch (error) {
+        console.error("Error al cargar el modelo:", error);
+      } finally {
+        // Ocultar el loader
+        MySwal.close();
+        setIsLoading(false);
+      }
     };
+
     loadModelAndEmbeddings();
   }, []);
 
@@ -130,12 +159,18 @@ const Chat = () => {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <MainContainer
+    <div className="w-full flex justify-center items-start h-screen mt-2">
+      {isLoading ? (
+        // Muestra un loader (opcional)
+        <div className="flex items-center justify-center w-full h-full">
+          <span className="text-white text-xl">Cargando el chat...</span>
+        </div>
+      ) : (
+        <MainContainer
         style={{
           width: "100%",
-          maxWidth: "600px",
-          height: "80vh",
+          maxWidth: "800px",
+          height: "88vh",
           maxHeight: "600px",
           backgroundColor: "#1e1e1e",
           borderRadius: "12px",
@@ -143,6 +178,37 @@ const Chat = () => {
         }}
       >
         <ChatContainer>
+          <ConversationHeader
+            style={{
+              padding: "1px",
+              backgroundColor: "#1e1e1e",
+            }}
+          >
+            <Avatar
+              name="Emily"
+              title="Emely Chat Bot IA"
+              src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
+              style={{
+                padding: "4px",
+                backgroundColor: "#1e1e1e",
+              }}
+            />
+            <ConversationHeader.Content
+            >
+              <span
+                style={{
+                  alignSelf: 'flex-center',
+                  color: '#fff'
+                }}
+              >
+                Emely Chat Bot
+              </span>
+            </ConversationHeader.Content>
+            <ConversationHeader.Actions>
+              <StarButton title="Add to favourites" />
+              <InfoButton title="Show info" />
+            </ConversationHeader.Actions>
+          </ConversationHeader>
           <MessageList
             style={{
               flex: "1 1 auto",
@@ -161,7 +227,14 @@ const Chat = () => {
                   direction: msg.sender === "Usuario" ? "outgoing" : "incoming",
                   position: "normal",
                 }}
-              />
+              >
+                {msg.sender !== "Usuario" && (
+                  <Avatar
+                    name="Emily"
+                    src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
+                  />
+                )}
+              </Message>
             ))}
           </MessageList>
           <MessageInput
@@ -177,6 +250,9 @@ const Chat = () => {
           />
         </ChatContainer>
       </MainContainer>
+      )
+
+      }
     </div>
   );
 };
