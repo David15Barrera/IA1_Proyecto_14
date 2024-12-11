@@ -20,14 +20,8 @@ import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
-const Chat = () => {
-  const [messages, setMessages] = useState([
-    {
-      message: "¡Hola! Soy tu chatbot. ¿En qué puedo ayudarte?",
-      sentTime: "justo ahora",
-      sender: "Chatbot",
-    },
-  ]);
+const Chat = ({ messages, setMessages }) => {
+
   const [model, setModel] = useState(null);
   const [questionEmbeddings, setQuestionEmbeddings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -167,89 +161,89 @@ const Chat = () => {
         </div>
       ) : (
         <MainContainer
-        style={{
-          width: "100%",
-          maxWidth: "800px",
-          height: "88vh",
-          maxHeight: "600px",
-          backgroundColor: "#1e1e1e",
-          borderRadius: "12px",
-          overflow: "hidden",
-        }}
-      >
-        <ChatContainer>
-          <ConversationHeader
-            style={{
-              padding: "1px",
-              backgroundColor: "#1e1e1e",
-            }}
-          >
-            <Avatar
-              name="Emily"
-              title="Emely Chat Bot IA"
-              src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
+          style={{
+            width: "100%",
+            maxWidth: "800px",
+            height: "88vh",
+            maxHeight: "600px",
+            backgroundColor: "#1e1e1e",
+            borderRadius: "12px",
+            overflow: "hidden",
+          }}
+        >
+          <ChatContainer>
+            <ConversationHeader
               style={{
-                padding: "4px",
+                padding: "1px",
                 backgroundColor: "#1e1e1e",
               }}
-            />
-            <ConversationHeader.Content
             >
-              <span
+              <Avatar
+                name="Emily"
+                title="Emely Chat Bot IA"
+                src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
                 style={{
-                  alignSelf: 'flex-center',
-                  color: '#fff'
+                  padding: "4px",
+                  backgroundColor: "#1e1e1e",
                 }}
+              />
+              <ConversationHeader.Content
               >
-                Emely Chat Bot
-              </span>
-            </ConversationHeader.Content>
-            <ConversationHeader.Actions>
-              <StarButton title="Add to favourites" />
-              <InfoButton title="Show info" />
-            </ConversationHeader.Actions>
-          </ConversationHeader>
-          <MessageList
-            style={{
-              flex: "1 1 auto",
-              overflowY: "auto",
-              padding: "10px",
-              backgroundColor: "#1e1e1e",
-            }}
-          >
-            {messages.map((msg, index) => (
-              <Message
-                key={index}
-                model={{
-                  message: msg.message,
-                  sentTime: msg.sentTime,
-                  sender: msg.sender,
-                  direction: msg.sender === "Usuario" ? "outgoing" : "incoming",
-                  position: "normal",
-                }}
-              >
-                {msg.sender !== "Usuario" && (
-                  <Avatar
-                    name="Emily"
-                    src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
-                  />
-                )}
-              </Message>
-            ))}
-          </MessageList>
-          <MessageInput
-            placeholder="Escribe tu mensaje aquí..."
-            onSend={handleSend}
-            attachButton={false}
-            autoFocus
-            style={{
-              borderTop: "1px solid #444",
-              backgroundColor: "#1e1e1e",
-              color: "#fff",
-            }}
-          />
-        </ChatContainer>
-      </MainContainer>
+                <span
+                  style={{
+                    alignSelf: 'flex-center',
+                    color: '#fff'
+                  }}
+                >
+                  Emely Chat Bot
+                </span>
+              </ConversationHeader.Content>
+              <ConversationHeader.Actions>
+                <StarButton title="Add to favourites" />
+                <InfoButton title="Show info" />
+              </ConversationHeader.Actions>
+            </ConversationHeader>
+            <MessageList
+              style={{
+                flex: "1 1 auto",
+                overflowY: "auto",
+                padding: "10px",
+                backgroundColor: "#1e1e1e",
+              }}
+            >
+              {messages.map((msg, index) => (
+                <Message
+                  key={index}
+                  model={{
+                    message: msg.message,
+                    sentTime: msg.sentTime,
+                    sender: msg.sender,
+                    direction: msg.sender === "Usuario" ? "outgoing" : "incoming",
+                    position: "normal",
+                  }}
+                >
+                  {msg.sender !== "Usuario" && (
+                    <Avatar
+                      name="Emily"
+                      src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
+                    />
+                  )}
+                </Message>
+              ))}
+            </MessageList>
+            <MessageInput
+              placeholder="Escribe tu mensaje aquí..."
+              onSend={handleSend}
+              attachButton={false}
+              autoFocus
+              style={{
+                borderTop: "1px solid #444",
+                backgroundColor: "#1e1e1e",
+                color: "#fff",
+              }}
+            />
+          </ChatContainer>
+        </MainContainer>
       )
 
       }
