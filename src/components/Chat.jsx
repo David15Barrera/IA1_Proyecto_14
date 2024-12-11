@@ -9,6 +9,7 @@ import {
   ConversationHeader,
   StarButton,
   InfoButton,
+  TypingIndicator
 } from "@chatscope/chat-ui-kit-react";
 import * as use from "@tensorflow-models/universal-sentence-encoder";
 import * as tf from "@tensorflow/tfjs";
@@ -140,16 +141,14 @@ const Chat = ({ messages, setMessages }) => {
 
     // Procesar la respuesta del chatbot
     const response = await processQuery(text);
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          message: response,
-          sentTime: "justo ahora",
-          sender: "Chatbot",
-        },
-      ]);
-    }, 1000);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      {
+        message: response,
+        sentTime: "justo ahora",
+        sender: "Chatbot",
+      },
+    ]);
   };
 
   return (
@@ -165,7 +164,6 @@ const Chat = ({ messages, setMessages }) => {
             width: "100%",
             maxWidth: "800px",
             height: "88vh",
-            maxHeight: "600px",
             backgroundColor: "#1e1e1e",
             borderRadius: "12px",
             overflow: "hidden",
@@ -203,7 +201,12 @@ const Chat = ({ messages, setMessages }) => {
                 <InfoButton title="Show info" />
               </ConversationHeader.Actions>
             </ConversationHeader>
-            <MessageList
+            <MessageList typingIndicator={<TypingIndicator
+              style={{
+                padding: "10px",
+                backgroundColor: "#1e1e1e",
+              }}
+              content="Emily is typing" />}
               style={{
                 flex: "1 1 auto",
                 overflowY: "auto",
