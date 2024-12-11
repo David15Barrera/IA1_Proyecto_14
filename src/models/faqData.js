@@ -45,6 +45,10 @@ export const faqData = [
     { question: "¿Cómo está el clima?", answer: "No puedo verificar el clima directamente, pero puedes consultarlo en tu app favorita." },
     { question: "¿Qué me recomiendas para ver?", answer: "Depende de tus gustos. Si te gustan las series, prueba algo en Netflix o Prime Video. ¿Te gusta la acción o el drama?" },
     { question: "¿Qué hago si estoy aburrido?", answer: "Puedes leer un libro, aprender algo nuevo o ver una película interesante. ¿Qué te gusta hacer?" },
+    { question: "¿Cómo limpio una mancha de vino?", answer: "Espolvorea sal sobre la mancha para absorber el líquido y luego lava con agua fría y detergente." },
+    { question: "¿Qué hacer si pierdo mi tarjeta de crédito?", answer: "Contacta a tu banco de inmediato para bloquear la tarjeta y evitar cargos no autorizados." },
+    { question: "¿Cómo puedo organizar mi espacio de trabajo?", answer: "Deshazte de objetos innecesarios, usa organizadores y mantén los elementos esenciales a la mano." },
+
     
     // **Consejos generales**
     { question: "¿Cómo puedo ahorrar dinero?", answer: "Intenta llevar un presupuesto mensual, evita compras impulsivas y busca ofertas en lo que necesites." },
@@ -87,10 +91,64 @@ export const faqData = [
     { question: "¿Qué es big data?", answer: "Big data se refiere a grandes volúmenes de datos que no pueden ser procesados con herramientas tradicionales debido a su tamaño y complejidad." },
     { question: "¿Qué es un framework?", answer: "Un framework es una estructura o entorno predefinido que facilita el desarrollo de aplicaciones." },
     
+    // **Salud**
+    { question: "¿Cuántos litros de agua debo beber al día?", answer: "Se recomienda beber alrededor de 2 litros (8 vasos) al día, aunque puede variar según tu actividad física y clima." },
+    { question: "¿Qué hago si me duele la cabeza?", answer: "Descansa en un lugar tranquilo, bebe agua y, si persiste, consulta a un médico." },
+    { question: "¿Qué alimentos son buenos para la digestión?", answer: "Las frutas como la papaya, el yogur, los cereales integrales y las verduras son excelentes para mejorar la digestión." },
+
     // **Curiosidades**
     { question: "¿Qué es el aprendizaje profundo?", answer: "El aprendizaje profundo es una subrama del machine learning que utiliza redes neuronales con muchas capas." },
     { question: "¿Qué es un chatbot?", answer: "Un chatbot es un programa diseñado para simular conversaciones con usuarios." },
     { question: "¿Qué es GitHub?", answer: "GitHub es una plataforma para alojar y colaborar en proyectos de desarrollo de software utilizando control de versiones con Git." },
+    { question: "¿Qué es dolor?", answer: "Es el proceso por el cual una persona a traves de los nervios siente una punsada que llega al cerebro y lo procesa como dolor." },
+    { question: "¿Cuál es el país más grande del mundo?", answer: "Rusia es el país más grande del mundo, con una superficie de más de 17 millones de kilómetros cuadrados." },
+    { question: "¿Quién inventó Internet?", answer: "Internet fue desarrollado por ARPANET, un proyecto del Departamento de Defensa de los Estados Unidos en la década de 1960." },
+    { question: "¿Qué tan profundo es el océano?", answer: "El punto más profundo es la Fosa de las Marianas, que alcanza casi 11 km de profundidad." },
+    { question: "¿Dónde aprender Python?", answer: "Puedes aprender Python en plataformas como Codecademy, freeCodeCamp o con tutoriales en YouTube." },
+    { question: "¿Qué libros recomiendas para aprender programación?", answer: "Prueba 'Automate the Boring Stuff with Python' de Al Sweigart o 'Eloquent JavaScript' de Marijn Haverbeke." },
+    { question: "¿Cómo empezar con inteligencia artificial?", answer: "Comienza con cursos básicos en plataformas como Coursera, edX o la documentación de TensorFlow." },
+    { question: "¿Por que ella no me ama?", answer: "Porque seguramente no hiciste el esfuerzo correcto para corresponder tus sentimientos" },
+    { question: "¿Quien es el auxiliar del curso?", answer: "No cuento con esa informacion tan especifica" },
+    { question: "¿Ella me ama?", answer: "Posiblemente no, pero del amor al odio solo hay un paso" },
+    { question: "¿Porque me canso mucho?", answer: "Porque estas deprimido" },
+    { question: "¿Por qué el cielo es azul?", answer: "El cielo se ve azul porque las moléculas de la atmósfera dispersan la luz azul del sol más que otros colores." },
+    { question: "¿Quién fue Albert Einstein?", answer: "Einstein fue un físico famoso por desarrollar la teoría de la relatividad y contribuir al entendimiento de la física moderna." },
+    { question: "¿Cuánto pesa la Tierra?", answer: "La masa de la Tierra es aproximadamente 5.97 × 10^24 kilogramos." },
 
+    // **Entretenimiento**
+    { question: "¿Cuál es la película más taquillera de la historia?", answer: "Actualmente, 'Avatar' es la película más taquillera de la historia." },
+    { question: "¿Qué series son populares en Netflix?", answer: "Series populares incluyen 'Stranger Things', 'The Witcher' y 'The Crown'." },
+    { question: "¿Dónde puedo escuchar música gratis?", answer: "Plataformas como Spotify, YouTube y SoundCloud ofrecen opciones gratuitas para escuchar música." },
+    { question: "¿Quien es el auxiliar del curso?", answer: "No cuento con esa informacion tan especifica" },
+    { question: "¿Que carrera es la más dificil?", answer: "Ingenieria" },
+    { question: "¿Que es la luna?", answer: "Es el satelite del planteta tierra" },
+    { question: "¿Existen los Aliens?", answer: "No, es posible confirmar la veracidad de ellos, pero puede que si y puede que no" },
+
+    //** universales
+    { question: "¿Por qué el pan cuadrado viene en bolsas y el pan redondo en cajas?", answer: "Porque el pan redondo tiene más ego y quiere verse más elegante." },
+    { question: "¿Las cebras son blancas con rayas negras o negras con rayas blancas?", answer: "Son negras con rayas blancas, pero no se preocupan por definiciones." },
+    { question: "¿Los pingüinos tienen rodillas?", answer: "Sí, pero están escondidas bajo su plumaje. ¡Son tímidas!" },
+    { question: "¿Qué pasa si pongo una cuchara en el microondas?", answer: "Probablemente verás un espectáculo de chispas, pero no lo intentes en casa." },
+    { question: "¿Por qué no puedo lamerme el codo?", answer: "Es una habilidad reservada para los superhéroes... o los muy flexibles." },
+    { question: "¿Cómo saben las uvas si deben ser vino o pasas?", answer: "Tienen una reunión familiar y lo deciden democráticamente." },
+    { question: "¿Por qué las ovejas no encogen cuando llueve?", answer: "Porque tienen un contrato exclusivo con las leyes de la física." },
+    { question: "¿Los peces tienen sed?", answer: "No, pero si lo tuvieran, lo tendrían fácil." },
+    { question: "¿Los zombies pueden ser vegetarianos?", answer: "Solo si encuentran cerebros de tofu." },
+    { question: "¿Puedo guardar pizza en mi bolsillo?", answer: "Claro, pero no será buena idea si llevas pantalones blancos." },
+    { question: "¿Qué pasaría si el sol se apagara?", answer: "Tendrás una excusa perfecta para usar linterna todo el tiempo." },
+    { question: "¿Qué fue primero, el huevo o la gallina?", answer: "Primero fue el debate interminable entre ambas." },
+    { question: "¿Por qué las almohadas nunca están frías por ambos lados?", answer: "Porque una siempre está en modo 'calor hogareño'." },
+    { question: "¿Puedo atrapar un arcoíris?", answer: "Solo si tienes un frasco de magia ilimitada." },
+    { question: "¿Por qué los pájaros no se electrocutan en los cables?", answer: "Porque no pagan la factura eléctrica." },
+    { question: "¿Qué hacen las abejas en su tiempo libre?", answer: "Van al 'zum-bar' a relajarse con una buena mielada." },
+    { question: "¿Por qué no puedo encontrar mi otro calcetín?", answer: "Es porque tiene una vida secreta como ninja." },
+    { question: "¿Qué pasaría si los gatos dominaran el mundo?", answer: "Los humanos seríamos sus empleados a tiempo completo, pero ¿no lo somos ya?" },
+    { question: "¿Por qué los relojes van en círculo?", answer: "Porque si fueran cuadrados, perderían su encanto." },
+    { question: "¿Por qué los espaguetis no tienen cuchara propia?", answer: "Porque son independientes y les gusta complicarte la vida." },
+
+    // Preguntas emocionales
+    { question: "¿Por qué me siento solo?", answer: "A veces la soledad nos enseña mucho. Habla con alguien que te valore." },
+    { question: "¿Cómo puedo ser feliz?", answer: "Encuentra tiempo para lo que amas y rodéate de quienes te valoran." },
+    { question: "¿Qué significa la vida?", answer: "La vida es lo que haces de ella. Encuentra lo que te hace feliz." },  
 ];
   
