@@ -90,30 +90,76 @@ const Chat = ({ messages, setMessages }) => {
   // Procesar consulta
   const processQuery = async (query) => {
     if (!model) {
-      return "El modelo aún no está listo, por favor espera un momento.";
+        return "El modelo aún no está listo, por favor espera un momento.";
     }
 
     // Normalizar la consulta del usuario
-    const normalizedQuery = query.trim().toLowerCase();
+    const normalizedQuery = query.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-    // Coincidencias exactas para preguntas clave
+    // Función para detectar entradas aleatorias (como secuencias de caracteres sin sentido)
+    const isRandomInput = (input) => {
+        const randomPattern = /^[a-z0-9]{6,}$/i; // Detecta cadenas largas de letras/números sin espacios ni palabras reales
+        return randomPattern.test(input);
+    };
+
+    // Respuestas predeterminadas para saludos
+    const greetings = ["hola", "buenos días", "buenas tardes", "buenas noches", "qué tal", "cómo estás"];
+    if (greetings.includes(normalizedQuery)) {
+        return "¡Hola! ¿En qué puedo ayudarte?";
+    }
+
+    // Respuesta específica para cálculos simples
+    const mathPattern = /^(\d+)([-+*/])(\d+)$/; // Detecta operaciones como 234-12
+    const mathMatch = normalizedQuery.match(mathPattern);
+    if (mathMatch) {
+        const num1 = parseInt(mathMatch[1], 10);
+        const operator = mathMatch[2];
+        const num2 = parseInt(mathMatch[3], 10);
+        let result;
+
+        switch (operator) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num2 !== 0 ? num1 / num2 : "Indefinido (división por cero)";
+                break;
+            default:
+                result = "Operación no reconocida";
+        }
+        return `El resultado es: ${result}`;
+    }
+
+    // Si la entrada parece aleatoria, devolvemos una respuesta pidiendo más especificidad
+    if (isRandomInput(normalizedQuery)) {
+        return "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
+    }
+
+    // Respuestas exactas
     const exactMatches = {
-      hola: "¡Hola! ¿En qué puedo ayudarte?",
-      "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
-      "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
-      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
+        "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
+        "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
+        "gracias": "¡De nada! Estoy aquí para ayudarte.",
+        "adiós": "¡Hasta pronto! Aquí estaré cuando me necesites.",
+        "lo siento": "No te preocupes, estoy aquí para ayudarte.",
     };
 
     if (exactMatches[normalizedQuery]) {
-      return exactMatches[normalizedQuery];
+        return exactMatches[normalizedQuery];
     }
 
-    // Verificar si la consulta es una expresión matemática directa
-    if (isMathExpression(normalizedQuery)) {
-      return evaluateExpression(normalizedQuery);
-    }
+      // Verificar si la consulta es una expresión matemática directa
+      if (isMathExpression(normalizedQuery)) {
+        return evaluateExpression(normalizedQuery);
+      }
 
-    // Verificar si es una pregunta en lenguaje natural con una operación matemática
+       // Verificar si es una pregunta en lenguaje natural con una operación matemática
     const mathExpression = extractMathFromNaturalLanguage(normalizedQuery);
     if (mathExpression) {
       return evaluateExpression(mathExpression);
@@ -124,10 +170,18 @@ const Chat = ({ messages, setMessages }) => {
 
     // Calcular similitud con las preguntas predefinidas
     const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
-    const bestMatchIndex = similarities.argMax(1).arraySync()[0];
+    const similaritiesArray = similarities.arraySync()[0];
+    const maxSimilarity = Math.max(...similaritiesArray);
+    const bestMatchIndex = similaritiesArray.indexOf(maxSimilarity);
 
-    return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta.";
-  };
+    // Verificar si la similitud es suficiente
+    if (maxSimilarity < 0.4) { // Ajusta el umbral según sea necesario
+        return "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
+    }
+
+    return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
+};
+
 
   // Manejar el envío de mensajes
   const handleSend = async (text) => {

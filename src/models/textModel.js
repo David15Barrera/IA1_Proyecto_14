@@ -47,53 +47,55 @@ const evaluateExpression = (expression) => {
 
 // Procesar consulta
 export const findBestMatch = async (query) => {
-    if (!model) {
-      await loadModel();
-    }
-  
-    // Normalizar la consulta del usuario
-    const normalizedQuery = query.trim().toLowerCase();
-  
-    // Coincidencias exactas para preguntas clave
-    const exactMatches = {
-      "hola": "¡Hola! ¿En qué puedo ayudarte?",
-      "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
-      "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
-      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
-    };
-  
-    if (exactMatches[normalizedQuery]) {
-      return exactMatches[normalizedQuery];
-    }
-  
-    // Verificar si la consulta es una expresión matemática directa
-    if (isMathExpression(normalizedQuery)) {
-      return evaluateExpression(normalizedQuery);
-    }
-  
-    // Verificar si es una pregunta en lenguaje natural con una operación matemática
-    const mathExpression = extractMathFromNaturalLanguage(normalizedQuery);
-    if (mathExpression) {
-      return evaluateExpression(mathExpression);
-    }
-  
-    // Generar el embedding de la consulta
-    const queryEmbedding = await model.embed([normalizedQuery]);
-  
-    // Normalizar las preguntas en faqData y calcular similitud
-    const normalizedFaqData = faqData.map((item) => ({
-      ...item,
-      question: item.question.toLowerCase(), // Convertir preguntas a minúsculas
-    }));
-  
-    const questionEmbeddings = await model.embed(
-      normalizedFaqData.map((item) => item.question)
-    );
-  
-    const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
-    const bestMatchIndex = similarities.argMax(1).arraySync()[0];
-  
-    return normalizedFaqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta.";
+  if (!model) {
+    await loadModel();
+  }
+
+  // Normalizar la consulta del usuario
+  const normalizedQuery = query.trim().toLowerCase();
+
+  // Coincidencias exactas para preguntas clave
+  const exactMatches = {
+    "hola": "¡Hola! ¿En qué puedo ayudarte?",
+    "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
+    "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
+    "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
   };
-  
-  
+
+  if (exactMatches[normalizedQuery]) {
+    return exactMatches[normalizedQuery];
+  }
+
+  // Verificar si la consulta es una expresión matemática directa
+  if (isMathExpression(normalizedQuery)) {
+    return evaluateExpression(normalizedQuery);
+  }
+
+  // Verificar si es una pregunta en lenguaje natural con una operación matemática
+  const mathExpression = extractMathFromNaturalLanguage(normalizedQuery);
+  if (mathExpression) {
+    return evaluateExpression(mathExpression);
+  }
+
+  // Generar el embedding de la consulta del usuario
+  const queryEmbedding = await model.embed([normalizedQuery]);
+
+  // Calcular similitudes entre la consulta y las preguntas en el FAQ
+  const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
+  const similaritiesArray = similarities.arraySync()[0];
+
+  // Encontrar la mejor coincidencia y el puntaje
+  const bestMatchIndex = similaritiesArray.indexOf(Math.max(...similaritiesArray));
+  const bestMatchScore = similaritiesArray[bestMatchIndex];
+
+  // Umbral mínimo para similitud
+  const SIMILARITY_THRESHOLD = 0.5;
+
+  // Si la similitud no es suficiente, devolver mensaje genérico
+  if (bestMatchScore < SIMILARITY_THRESHOLD) {
+    return "Lo siento, no entiendo tu consulta. ¿Puedes escribirla de nuevo?";
+  }
+
+  // Responder con la mejor coincidencia del FAQ
+  return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta.";
+};
