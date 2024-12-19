@@ -1,7 +1,7 @@
 export const faqData = [
     // **Saludos**
     { question: "Hola", answer: "¡Hola! ¿En qué puedo ayudarte hoy?" },
-    { question: "¿Qué tal?", answer: "¡Todo bien! ¿Y tú?" },
+    { question: "¿Que tal?", answer: "¡Todo bien! ¿Y tú?" },
     { question: "Buenas tardes", answer: "Buenas tardes. ¿Cómo puedo asistirte?" },
     { question: "Buenas noches", answer: "Buenas noches. ¿En qué te puedo ayudar?" },
     { question: "¿Qué onda?", answer: "¡Hola! ¿Qué tal todo?" },

@@ -87,102 +87,81 @@ const Chat = ({ messages, setMessages }) => {
     }
   };
 
-  // Procesar consulta
   const processQuery = async (query) => {
     if (!model) {
-        return "El modelo aún no está listo, por favor espera un momento.";
+      return "El modelo aún no está listo, por favor espera un momento.";
     }
-
+  
     // Normalizar la consulta del usuario
-    const normalizedQuery = query.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-    // Función para detectar entradas aleatorias (como secuencias de caracteres sin sentido)
-    const isRandomInput = (input) => {
-        const randomPattern = /^[a-z0-9]{6,}$/i; // Detecta cadenas largas de letras/números sin espacios ni palabras reales
-        return randomPattern.test(input);
-    };
-
+    const normalizedQuery = query
+      .trim()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  
     // Respuestas predeterminadas para saludos
     const greetings = ["hola", "buenos días", "buenas tardes", "buenas noches", "qué tal", "cómo estás"];
-    if (greetings.includes(normalizedQuery)) {
-        return "¡Hola! ¿En qué puedo ayudarte?";
+    if (greetings.some((greet) => normalizedQuery.includes(greet))) {
+      return "¡Hola! ¿En qué puedo ayudarte?";
     }
-
+  
     // Respuesta específica para cálculos simples
-    const mathPattern = /^(\d+)([-+*/])(\d+)$/; // Detecta operaciones como 234-12
+    const mathPattern = /^(\d+)([-+*/])(\d+)$/;
     const mathMatch = normalizedQuery.match(mathPattern);
     if (mathMatch) {
-        const num1 = parseInt(mathMatch[1], 10);
-        const operator = mathMatch[2];
-        const num2 = parseInt(mathMatch[3], 10);
-        let result;
-
-        switch (operator) {
-            case "+":
-                result = num1 + num2;
-                break;
-            case "-":
-                result = num1 - num2;
-                break;
-            case "*":
-                result = num1 * num2;
-                break;
-            case "/":
-                result = num2 !== 0 ? num1 / num2 : "Indefinido (división por cero)";
-                break;
-            default:
-                result = "Operación no reconocida";
-        }
-        return `El resultado es: ${result}`;
+      const num1 = parseInt(mathMatch[1], 10);
+      const operator = mathMatch[2];
+      const num2 = parseInt(mathMatch[3], 10);
+      const result = {
+        "+": num1 + num2,
+        "-": num1 - num2,
+        "*": num1 * num2,
+        "/": num2 !== 0 ? num1 / num2 : "Indefinido (división por cero)",
+      }[operator];
+      return `El resultado es: ${result}`;
     }
-
-    // Si la entrada parece aleatoria, devolvemos una respuesta pidiendo más especificidad
-    if (isRandomInput(normalizedQuery)) {
-        return "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
-    }
-
+  
     // Respuestas exactas
     const exactMatches = {
-        "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
-        "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
-        "gracias": "¡De nada! Estoy aquí para ayudarte.",
-        "adiós": "¡Hasta pronto! Aquí estaré cuando me necesites.",
-        "lo siento": "No te preocupes, estoy aquí para ayudarte.",
+      "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
+      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
+      "gracias": "¡De nada! Estoy aquí para ayudarte.",
+      "adiós": "¡Hasta pronto! Aquí estaré cuando me necesites.",
+      "lo siento": "No te preocupes, estoy aquí para ayudarte.",
     };
-
     if (exactMatches[normalizedQuery]) {
-        return exactMatches[normalizedQuery];
+      return exactMatches[normalizedQuery];
     }
-
-      // Verificar si la consulta es una expresión matemática directa
-      if (isMathExpression(normalizedQuery)) {
-        return evaluateExpression(normalizedQuery);
-      }
-
-       // Verificar si es una pregunta en lenguaje natural con una operación matemática
-    const mathExpression = extractMathFromNaturalLanguage(normalizedQuery);
-    if (mathExpression) {
-      return evaluateExpression(mathExpression);
+  
+    // Detectar entradas sin sentido o aleatorias
+    if (normalizedQuery.length < 4 || /^[a-z0-9]*$/.test(normalizedQuery)) {
+      return "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
     }
-
-    // Generar el embedding de la consulta
+  
+    // Buscar en el dataset faqData
     const queryEmbedding = await model.embed([normalizedQuery]);
-
-    // Calcular similitud con las preguntas predefinidas
     const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
     const similaritiesArray = similarities.arraySync()[0];
     const maxSimilarity = Math.max(...similaritiesArray);
-    const bestMatchIndex = similaritiesArray.indexOf(maxSimilarity);
-
-    // Verificar si la similitud es suficiente
-    if (maxSimilarity < 0.4) { // Ajusta el umbral según sea necesario
-        return "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
+  
+    if (maxSimilarity >= 0.5) {
+      const bestMatchIndex = similaritiesArray.indexOf(maxSimilarity);
+      return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
     }
-
-    return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
-};
-
-
+  
+    // Temas permitidos y respuesta fuera de los límites
+    const allowedTopics = ["animales", "tecnología", "saludos", "matemáticas simples"];
+    const generalQuestionPattern = /(qué es|cómo es|quién es|qué hace)/;
+  
+    if (generalQuestionPattern.test(normalizedQuery)) {
+      return `Lo siento, esa pregunta está fuera de mis límites. Por favor, pregúntame sobre estos temas: ${allowedTopics.join(", ")}.`;
+    }
+  
+    // Respuesta final
+    return `Lo siento, esa pregunta está fuera de mis límites. Por favor, pregúntame sobre estos temas: ${allowedTopics.join(", ")}.`;
+  };
+  
+  
   // Manejar el envío de mensajes
   const handleSend = async (text) => {
     const newMessage = {
