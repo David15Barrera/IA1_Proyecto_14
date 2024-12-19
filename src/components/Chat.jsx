@@ -126,7 +126,7 @@ const Chat = ({ messages, setMessages }) => {
     const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
     const bestMatchIndex = similarities.argMax(1).arraySync()[0];
 
-    return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta.";
+    return faqData[bestMatchIndex]?.answer || "Aun no aprendo sobre lo que quieres saber, pero puedes preuntarme sobre tecnologia, Inteligencia artificial, libros o musica.";
   };
 
   // Manejar el envío de mensajes
