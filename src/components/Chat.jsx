@@ -96,17 +96,6 @@ const Chat = ({ messages, setMessages }) => {
     // Normalizar la consulta del usuario
     const normalizedQuery = query.trim().toLowerCase();
 
-    // Coincidencias exactas para preguntas clave
-    const exactMatches = {
-      hola: "¡Hola! ¿En qué puedo ayudarte?",
-      "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
-      "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
-      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
-    };
-
-    if (exactMatches[normalizedQuery]) {
-      return exactMatches[normalizedQuery];
-    }
 
     // Verificar si la consulta es una expresión matemática directa
     if (isMathExpression(normalizedQuery)) {
