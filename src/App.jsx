@@ -6,7 +6,7 @@ import Chat from "./components/Chat";
 const App = () => {
   const initialMessages = [
     {
-      message: "¡Hola! Soy tu chatbot. ¿En qué puedo ayudarte?",
+      message: "¡Hola! Soy tu chatbot. ¿Puedo ayudarte con libros, musica y Tecnologia?",
       sentTime: "justo ahora",
       sender: "Chatbot",
     },

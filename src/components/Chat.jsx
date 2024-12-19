@@ -98,15 +98,23 @@ const Chat = ({ messages, setMessages }) => {
 
     // Coincidencias exactas para preguntas clave
     const exactMatches = {
-      hola: "¡Hola! ¿En qué puedo ayudarte?",
-      "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
-      "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
-      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
+      hola: "¡Hola! ¿Puedo ayudarte con libros, musica y Tecnologia?",
+      "cómo estás": "Estoy aquí para ayudarte con tus dudas en libros, musica y Tecnologia?.",
+      "cómo te sientes": "Me siento genial ayudándote con tus consultas de libros, musica y tecnologia.",
+      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte en libros, musica y tecnologia",
+      hi: "Hi! How can I assist you today in books, music and technology?",
+      hello: "Hello! How can I help you in books, music and technology?",
     };
 
     if (exactMatches[normalizedQuery]) {
       return exactMatches[normalizedQuery];
     }
+
+      // Verificar si la consulta es una entrada incoherente
+  const meaninglessInput = /^[a-z0-9]*$/.test(normalizedQuery) && normalizedQuery.length < 8;
+  if (meaninglessInput || /\d+[a-z]+|[a-z]+\d+/.test(normalizedQuery)) {
+    return "Lo siento, no entiendo tu consulta. ¿Puedes ser más específico?";
+  }
 
     // Verificar si la consulta es una expresión matemática directa
     if (isMathExpression(normalizedQuery)) {

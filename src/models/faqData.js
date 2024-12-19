@@ -7,8 +7,8 @@ export const faqData = [
     { question: "Buenas días", answer: "Buenas días. ¿Cómo puedo asistirte?" },
     { question: "¿Qué onda?", answer: "¡Hola! ¿Qué tal tu día?" },
 
-    { question: "Hi", answer: "Hi! How can I assist you today?" },
-    { question: "Hello", answer: "Hello! How can I help you?" },
+    { question: "Hi", answer: "Hi! How can I assist you today in books, music and technology?" },
+    { question: "Hello", answer: "Hello! How can I help you in books, music and technology?" },
     { question: "How's it going?", answer: "All good! How about you?" },
     { question: "Good afternoon", answer: "Good afternoon. How can I assist you?" },
     { question: "Good evening", answer: "Good evening. How can I help you?" },
@@ -24,9 +24,9 @@ export const faqData = [
     { question: "¿Cómo te llamas?", answer: "No tengo un nombre propio, pero puedes llamarme tu asistente virtual." },
     { question: "¿Eres inteligente?", answer: "Hago lo mejor que puedo con la información que tengo. ¡Estoy aprendiendo contigo!" },
     
-    { question: "Who are you?", answer: "I am a virtual assistant created to help you with your questions and inquiries." },
-    { question: "What are you?", answer: "I am a chatbot, a program designed to answer your questions and hold conversations." },
-    { question: "Are you human?", answer: "No, I am an artificial intelligence, but I'm here to help you as if I were human." },
+    { question: "Who are you?", answer: "I am a virtual assistant created to help you with your questions and inquiries in books, music and technology." },
+    { question: "What are you?", answer: "I am a chatbot, a program designed to answer your questions in books, music and technology." },
+    { question: "Are you human?", answer: "No, I am an artificial intelligence, but I'm here to help you in books, music and technology as if I were human." },
     { question: "Who created you?", answer: "I was created by a developer passionate about technology and machine learning." },
     { question: "What is your name?", answer: "I don't have a personal name, but you can call me your virtual assistant." },
     { question: "Are you intelligent?", answer: "I do my best with the information I have. I’m learning with you!" },

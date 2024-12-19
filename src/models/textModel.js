@@ -123,16 +123,16 @@ export const findBestMatch = async (query) => {
   // Coincidencias exactas para preguntas clave
   const exactMatches = {
     // Español
-    "hola": "¡Hola! ¿En qué puedo ayudarte?",
-    "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
+    "hola": "¡Hola! ¿Puedo ayudarte con Libros musica y Tecnologia?",
+    "cómo estás": "Estoy aquí para ayudarte con tus dudas en libros musica y tecnologia.",
     "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
-    "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
+    "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte en libros, musica y tecnologia.",
 
     // Inglés
-    "hello": "Hello! How can I help you?",
-    "how are you": "I’m here to assist you with your questions.",
+    "hello": "Hellp!, I can help you with books, music and technology?",
+    "how are you": "I’m here to assist you with your questions in books, music and technology.",
     "what is your purpose": "I’m here to help you with your doubts and queries.",
-    "are you human": "No, I’m an artificial intelligence, but I’m here to help you as best as I can.",
+    "are you human": "No, I’m an artificial intelligence, but I’m here to help you as best as I can in books, music and technology.",
   };
 
   if (exactMatches[normalizedQuery]) {
