@@ -115,7 +115,7 @@ const Chat = ({ messages, setMessages }) => {
     const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
     const bestMatchIndex = similarities.argMax(1).arraySync()[0];
 
-    return faqData[bestMatchIndex]?.answer || "Lo siento, no entiendo tu consulta.";
+    return faqData[bestMatchIndex]?.answer || "Lo siento, Solo puedo ayudarte con consultas relacionadas con Python y Javascript";
   };
 
   // Manejar el envío de mensajes
@@ -167,7 +167,7 @@ const Chat = ({ messages, setMessages }) => {
             >
               <Avatar
                 name="Emily"
-                title="Emely Chat Bot IA"
+                title="Emily"
                 src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
                 style={{
                   padding: "4px",
@@ -182,7 +182,7 @@ const Chat = ({ messages, setMessages }) => {
                     color: '#fff'
                   }}
                 >
-                  Emely Chat Bot
+                  Emily ChatBot de Python y Javascript
                 </span>
               </ConversationHeader.Content>
               <ConversationHeader.Actions>

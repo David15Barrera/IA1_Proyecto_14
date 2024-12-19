@@ -11,18 +11,125 @@ export const faqData = [
     { question: "¿Qué puedes hacer?", answer: "Puedo responder preguntas sobre JavaScript y Python, desde conceptos básicos hasta temas más avanzados. ¿Qué necesitas saber?" },
 
     // Conceptos básicos de JavaScript
-    { question: "¿Qué es JavaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas. ¿Te gustaría saber más?" },
+    { question: "¿Qué es JavaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas." },
+    { question: "¿que es javaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas." },
+    { question: "Que es javaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas." },
     { question: "¿Para qué sirve JavaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "¿Para que sirve javaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "Para qué sirve JavaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "para que sirve javaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
     { question: "¿Qué es el DOM en JavaScript?", answer: "El DOM (Document Object Model) es una interfaz que permite a JavaScript interactuar y modificar el contenido, la estructura y los estilos de una página web. ¿Necesitas ejemplos prácticos?" },
+    { question: "¿Qué es el DOM?", answer: "El DOM (Document Object Model) es una interfaz que permite a JavaScript interactuar y modificar el contenido, la estructura y los estilos de una página web. ¿Necesitas ejemplos prácticos?" },
     { question: "¿Qué son las promesas en JavaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "¿Que son las promesas en JavaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "Que son las promesas en javaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "que son las promesas en javaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
     { question: "¿Qué es async/await en JavaScript?", answer: "Async/await es una forma más sencilla de trabajar con promesas, haciendo que el código asíncrono parezca más lineal. ¿Te gustaría ver un ejemplo?" },
+    { question: "¿Cuál es la diferencia entre var, let y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "Cual es la diferencia entre var, let y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "cual es la diferencia entre var, let y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "cual es la diferencia entre var y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "cual es la diferencia entre var y let?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "¿Qué son los tipos de datos en JavaScript?", answer: "Los tipos de datos en JavaScript son una forma de categorizar los datos en función de su uso y comportamiento, ¿deseas un ejemplo?" },
+    { question: "que son los tipos de datos en JavaScript?", answer: "Los tipos de datos en JavaScript son una forma de categorizar los datos en función de su uso y comportamiento, ¿deseas un ejemplo?" },
+    { question: "Tipos de datos en javascript", answer: "String, Number, Boolean" },
+    { question: "Dame los tipos de datos en javascript", answer: "String, Number, Boolean" },
+    { question: "datos en javascript", answer: "String, Number, Boolean" },
+    { question: "¿Qué es una función en JavaScript?", answer: "Una función en JavaScript es un conjunto de instrucciones que se define una vez y se puede ejecutar varias veces, ¿quieres un ejemplo?" },
+    { question: "¿Qué es un objeto en JavaScript?", answer: "Un objeto en JavaScript es una colección de propiedades que se utiliza para almacenar datos y entidades complejas" },
+    {
+        question: "ejemplo de datos en javascript", answer: `numero = 10
+    nombre = "variable Cadena"
+    es_activo = True
+    `},
+    {
+        question: "¿como se define una variable en Javascript?", answer: `numero = 10
+    nombre = "variable Cadena"
+    es_activo = True
+    `},
+
+
+    //ejemplos promesas
+    {
+        question: "Si, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "claro, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "Claro, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "si, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+
+    {
+        question: "Ejemplo de Funcion en javascript", answer: `function areaCuadrado(lado) {
+    return lado * lado;
+  }` },
+
+    {
+        question: "si, Ejemplo de funcion en javascript", answer: `function areaCuadrado(lado) {
+    return lado * lado;
+    }` },
+
 
     // Conceptos básicos de Python
-    { question: "¿Qué es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más. ¿Quieres empezar con un concepto básico?" },
-    { question: "¿Para qué sirve Python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más. ¿En qué te gustaría enfocarte?" },
+    { question: "¿Qué es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "que es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "Que es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "¿Para qué sirve Python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "para que sirve Python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "para qué sirve python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más." },
     { question: "¿Qué son las listas en Python?", answer: "Las listas en Python son colecciones ordenadas y mutables que permiten almacenar elementos heterogéneos. ¿Te gustaría saber cómo se usan?" },
-    { question: "¿Qué son los diccionarios en Python?", answer: "Los diccionarios son estructuras de datos que almacenan pares clave-valor, ideales para buscar datos rápidamente. ¿Quieres un ejemplo?" },
-    { question: "¿Qué es un bucle for en Python?", answer: "El bucle for en Python se utiliza para iterar sobre secuencias como listas, cadenas o rangos. ¿Quieres que te explique cómo usarlo?" },
+    { question: "¿Que son las listas en Python?", answer: "Las listas en Python son colecciones ordenadas y mutables que permiten almacenar elementos heterogéneos. ¿Te gustaría saber cómo se usan?" },
+    { question: "que son las listas en python?", answer: "Las listas en Python son colecciones ordenadas y mutables que permiten almacenar elementos heterogéneos. ¿Te gustaría saber cómo se usan?" },
+    { question: "¿Qué son los diccionarios en Python?", answer: "Los diccionarios son estructuras de datos que almacenan pares clave-valor, ideales para buscar datos rápidamente." },
+    { question: "¿Qué es un bucle for en Python?", answer: "El bucle for en Python se utiliza para iterar sobre secuencias como listas, cadenas o rangos. ¿Quieres un ejemplo?" },
+    { question: "¿Qué son los tipos de datos en Python?", answer: "int, float, str, bool, list..." },
+    { question: "Que son los tipos de datos en Python?", answer: "int, float, str, bool, list..." },
+    { question: "que son los tipos de datos en python?", answer: "int, float, str, bool, list..." },
+    { question: "tipos de datos en python", answer: "int, float, str, bool, list..." },
+    { question: "¿Qué es un diccionario en Python?", answer: "Es una estructura de datos que almacena pares clave-valor" },
+    {
+        question: "ejemplo datos en Python", answer: `numero = 10
+        nombre = "variable Cadena"
+        es_activo = True
+    `},
+    {
+        question: "¿como se define una variable en Python?", answer: `numero = 10
+        nombre = "variable Cadena"
+        es_activo = True
+    `},
+
+    //ejemplos blucle
+    {
+        question: "dame ejemplo for en Python", answer: `for i in range(5): 
+    print(i)` },
+    {
+        question: "for en Python", answer: `for i in range(5): 
+    print(i)` },
+    {
+        question: "dame un ejemplo diccionarios en Python", answer: `diccionario = {"nombre": "Jhon", "edad": 25}
+        print(diccionario["nombre"]) 
+    ` },
+    {
+        question: "dame ejemplo lista en python", answer: `lista = [1, 2, 3]`
+    },
+
 
     // Comparación entre JavaScript y Python
     { question: "¿Cuál es mejor, JavaScript o Python?", answer: "Depende de tus objetivos. JavaScript es ideal para desarrollo web interactivo, mientras que Python es excelente para tareas de análisis de datos, inteligencia artificial y scripting. ¿Quieres saber cuándo usar cada uno?" },
@@ -84,19 +191,112 @@ export const faqData = [
     { question: "Who are you?", answer: "I am a virtual assistant here to help you with questions about JavaScript and Python." },
     { question: "What can you do?", answer: "I can answer questions about JavaScript and Python, from basic concepts to more advanced topics. What do you need to know?" },
 
-    // Basic JavaScript concepts
-    { question: "What is JavaScript?", answer: "JavaScript is a programming language used mainly to create dynamic and interactive web pages. Would you like to know more?" },
-    { question: "What is JavaScript used for?", answer: "JavaScript is used to develop interactive websites, create web applications, handle events in browsers, and more. Do you want to learn a specific concept?" },
-    { question: "What is the DOM in JavaScript?", answer: "The DOM (Document Object Model) is an interface that allows JavaScript to interact with and modify a web page's content, structure, and styles. Do you need practical examples?" },
-    { question: "What are promises in JavaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They help deal with tasks that take time, like server requests. Do you want an example?" },
+    // Basic JavaScript Concepts
+    { question: "What is JavaScript?", answer: "JavaScript is a programming language primarily used to create dynamic and interactive web pages." },
+    { question: "what is JavaScript?", answer: "JavaScript is a programming language primarily used to create dynamic and interactive web pages." },
+    { question: "What is javaScript?", answer: "JavaScript is a programming language primarily used to create dynamic and interactive web pages." },
+    { question: "What is JavaScript used for?", answer: "JavaScript is used to develop interactive websites, build web applications, handle browser events, and much more. Would you like to learn about any specific concept?" },
+    { question: "what is javaScript used for?", answer: "JavaScript is used to develop interactive websites, build web applications, handle browser events, and much more. Would you like to learn about any specific concept?" },
+    { question: "What is the DOM in JavaScript?", answer: "The DOM (Document Object Model) is an interface that allows JavaScript to interact with and modify the content, structure, and styles of a web page. Do you need practical examples?" },
+    { question: "What is the DOM?", answer: "The DOM (Document Object Model) is an interface that allows JavaScript to interact with and modify the content, structure, and styles of a web page. Do you need practical examples?" },
+    { question: "What are promises in JavaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They allow you to work with tasks that take time, such as server requests. Would you like an example?" },
+    { question: "what are promises in JavaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They allow you to work with tasks that take time, such as server requests. Would you like an example?" },
+    { question: "What are promises in javaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They allow you to work with tasks that take time, such as server requests. Would you like an example?" },
     { question: "What is async/await in JavaScript?", answer: "Async/await is a simpler way to work with promises, making asynchronous code look more linear. Would you like to see an example?" },
+    { question: "What is the difference between var, let, and const?", answer: "In JavaScript, the difference is that var defines mutable variables, let defines block-scoped mutable variables, and const defines immutable variables." },
+    { question: "what is the difference between var, let, and const?", answer: "In JavaScript, the difference is that var defines mutable variables, let defines block-scoped mutable variables, and const defines immutable variables." },
+    { question: "What is the difference between var and const?", answer: "In JavaScript, var defines mutable variables while const defines immutable variables." },
+    { question: "What is the difference between var and let?", answer: "In JavaScript, var defines mutable variables while let defines block-scoped mutable variables." },
+    { question: "What are data types in JavaScript?", answer: "Data types in JavaScript are ways to categorize data based on their use and behavior." },
+    { question: "what are data types in JavaScript?", answer: "Data types in JavaScript are ways to categorize data based on their use and behavior." },
+    { question: "Data types in JavaScript", answer: "String, Number, Boolean" },
+    { question: "Give me the data types in JavaScript", answer: "String, Number, Boolean" },
+    { question: "Data in JavaScript", answer: "String, Number, Boolean" },
+    { question: "What is a function in JavaScript?", answer: "A function in JavaScript is a set of instructions that is defined once and can be executed multiple times." },
+    { question: "What is an object in JavaScript?", answer: "An object in JavaScript is a collection of properties used to store data and complex entities." },
+    {
+        question: "Example of data in JavaScript", answer: `number = 10
+    name = "String variable"
+    isActive = true
+    `},
+    {
+        question: "How do you define a variable in JavaScript?", answer: `number = 10
+    name = "String variable"
+    isActive = true
+    `},
 
-    // Basic Python concepts
-    { question: "What is Python?", answer: "Python is an easy-to-learn programming language popular for its simplicity and versatility. It's used in data science, artificial intelligence, web development, and more. Would you like to start with a basic concept?" },
-    { question: "What is Python used for?", answer: "Python is used for creating scripts, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
-    { question: "What are lists in Python?", answer: "Lists in Python are ordered and mutable collections that allow you to store heterogeneous elements. Would you like to learn how to use them?" },
-    { question: "What are dictionaries in Python?", answer: "Dictionaries are data structures that store key-value pairs, ideal for quick lookups. Do you want an example?" },
-    { question: "What is a for loop in Python?", answer: "The for loop in Python is used to iterate over sequences like lists, strings, or ranges. Would you like me to explain how to use it?" },
+    // Promises Examples
+    {
+        question: "Yes, give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "Sure, give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "sure, give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "Give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+
+    {
+        question: "Example of a function in JavaScript", answer: `function squareArea(side) {
+    return side * side;
+  }` },
+
+    {
+        question: "Yes, example of a function in JavaScript", answer: `function squareArea(side) {
+    return side * side;
+    }` },
+
+    // Basic Python Concepts
+    { question: "What is Python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "what is Python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "What is python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "What is Python used for?", answer: "Python is used for scripting, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
+    { question: "what is Python used for?", answer: "Python is used for scripting, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
+    { question: "What is Python for?", answer: "Python is used for scripting, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
+    { question: "What are lists in Python?", answer: "Lists in Python are ordered and mutable collections that allow you to store heterogeneous elements. Would you like to know how to use them?" },
+    { question: "What are dictionaries in Python?", answer: "Dictionaries are data structures that store key-value pairs, ideal for quickly looking up data." },
+    { question: "What is a for loop in Python?", answer: "The for loop in Python is used to iterate over sequences such as lists, strings, or ranges. Would you like an example?" },
+    { question: "What are data types in Python?", answer: "int, float, str, bool, list..." },
+    { question: "What is a dictionary in Python?", answer: "A dictionary in Python is a data structure that stores key-value pairs, ideal for fast lookups." },
+
+
+    {
+        question: "example of data in Python", answer: `number = 10
+            name = "string variable"
+            is_active = True
+        `},
+    {
+        question: "how to define a variable in Python?", answer: `number = 10
+            name = "string variable"
+            is_active = True
+        `},
+
+    // loop examples
+    {
+        question: "example of for loop in Python", answer: `for i in range(5): 
+        print(i)` },
+    {
+        question: "for loop in Python", answer: `for i in range(5): 
+        print(i)` },
+    {
+        question: "Yes, give me an example of dictionaries in Python", answer: `dictionary = {"name": "John", "age": 25}
+            print(dictionary["name"]) 
+        ` },
+    {
+        question: "example of list in Python", answer: `list = [1, 2, 3]`
+    },
 
     // Comparison between JavaScript and Python
     { question: "Which is better, JavaScript or Python?", answer: "It depends on your goals. JavaScript is great for interactive web development, while Python excels in data analysis, artificial intelligence, and scripting. Would you like to know when to use each?" },
