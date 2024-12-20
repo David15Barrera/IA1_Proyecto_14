@@ -1,154 +1,344 @@
 export const faqData = [
-    // **Saludos**
-    { question: "Hola", answer: "¡Hola! ¿En qué puedo ayudarte?" },
-    { question: "¿Qué tal?", answer: "¡Todo bien! ¿Y tú?" },
-    { question: "Buenas tardes", answer: "Buenas tardes. ¿En qué te puedo ayudar?" },
-    { question: "Buenas noches", answer: "Buenas noches. ¿Cómo puedo asistirte?" },
-    { question: "¿Qué onda?", answer: "¡Hola! ¿Qué tal tu día?" },
+    // Saludos básicos
+    { question: "Hola", answer: "¡Hola! Puedo ayudarte en preguntas sobre JavaScript y Python. ¿En qué te puedo ayudar?" },
+    { question: "Buenas noches", answer: "¡Buenas noches! ¿Tienes alguna pregunta sobre JavaScript o Python?" },
+    { question: "Buenos días", answer: "¡Buenos días! ¿Te gustaría aprender algo nuevo de JavaScript o Python?" },
+    { question: "¿Cómo estás?", answer: "¡Estoy listo para ayudarte! ¿Qué necesitas saber sobre JavaScript o Python?" },
+    { question: "¿Qué haces?", answer: "Soy un asistente virtual diseñado para responder preguntas sobre JavaScript y Python. ¿Cómo puedo ayudarte?" },
 
-    // **Identidad del bot**
-    { question: "¿Quién eres?", answer: "Soy un asistente virtual creado para ayudarte con tus dudas y consultas." },
-    { question: "¿Qué eres?", answer: "Soy un chatbot, un programa diseñado para responder tus preguntas y mantener conversaciones." },
-    { question: "¿Eres humano?", answer: "No, soy una inteligencia artificial, pero estoy aquí para ayudarte como si lo fuera." },
-    { question: "¿Quién te creó?", answer: "Fui creada por un desarrollador apasionado por la tecnología y el aprendizaje automático." },
-    { question: "¿Cómo te llamas?", answer: "No tengo un nombre propio, pero puedes llamarme tu asistente virtual." },
-    { question: "¿Eres inteligente?", answer: "Hago lo mejor que puedo con la información que tengo. ¡Estoy aprendiendo contigo!" },
-    
-       // **Información sobre tecnología**
-    { question: "¿Qué es TensorFlow?", answer: "TensorFlow es una biblioteca de machine learning desarrollada por Google." },
-    { question: "¿Qué es React?", answer: "React es una biblioteca de JavaScript para construir interfaces de usuario." },
-    { question: "¿Qué es JavaScript?", answer: "JavaScript es un lenguaje de programación utilizado para el desarrollo web." },
-    { question: "¿Qué es una API?", answer: "Una API es un conjunto de definiciones y protocolos que permiten a las aplicaciones comunicarse entre sí." },
-    { question: "¿Qué es una base de datos?", answer: "Una base de datos es un sistema que almacena y organiza datos para su fácil acceso." },
-    { question: "¿Qué es una red neuronal?", answer: "Una red neuronal es un modelo computacional inspirado en el cerebro humano." },
-    { question: "¿Qué es HTML?", answer: "HTML es un lenguaje de marcado utilizado para crear la estructura de las páginas web." },
-    { question: "¿Qué es CSS?", answer: "CSS es un lenguaje que se utiliza para diseñar y estilizar páginas web." },
-    { question: "¿Qué es machine learning?", answer: "Machine learning es una rama de la inteligencia artificial que permite a las máquinas aprender de datos." },
-    
-    // **Ayuda general**
-    { question: "¿Cómo funciona esta IA?", answer: "Esta IA utiliza un modelo de machine learning para entender tus consultas." },
-    { question: "¿Qué puedes hacer?", answer: "Puedo responder preguntas sobre tecnología y ayudarte con dudas comunes." },
-    { question: "¿Quién te creó?", answer: "Fui creada por un desarrollador que quiere ayudarte con tus consultas." },
-    { question: "¿Cómo puedo aprender JavaScript?", answer: "Puedes comenzar con recursos en línea como MDN Web Docs o plataformas como freeCodeCamp." },
-    { question: "¿Dónde puedo aprender sobre machine learning?", answer: "Puedes aprender sobre machine learning en sitios como Coursera, edX o TensorFlow.org." },
-    
-    // **Estado y emociones**
-    { question: "¿Cómo estás?", answer: "Estoy aquí para ayudarte con tus dudas." },
-    { question: "¿Estás bien?", answer: "¡Claro que sí! ¿En qué puedo asistirte hoy?" },
-    { question: "¿Cómo te sientes?", answer: "Me siento genial ayudándote con tus consultas." },
-    { question: "¿Eres feliz?", answer: "¡Por supuesto! Mi felicidad es ayudarte." },
-    
-    // **Preguntas cotidianas**
-    { question: "¿Qué día es hoy?", answer: `Hoy es ${new Date().toLocaleDateString()}.` },
-    { question: "¿Qué hora es?", answer: `Ahora mismo son aproximadamente las ${new Date().toLocaleTimeString()}.` },
-    { question: "¿Qué puedo cocinar?", answer: "¿Qué tal una pasta sencilla o un arroz con pollo? Si necesitas recetas, puedo buscarte opciones." },
-    { question: "¿Cómo está el clima?", answer: "No puedo verificar el clima directamente, pero puedes consultarlo en tu app favorita." },
-    { question: "¿Qué me recomiendas para ver?", answer: "Depende de tus gustos. Si te gustan las series, prueba algo en Netflix o Prime Video. ¿Te gusta la acción o el drama?" },
-    { question: "¿Qué hago si estoy aburrido?", answer: "Puedes leer un libro, aprender algo nuevo o ver una película interesante. ¿Qué te gusta hacer?" },
-    { question: "¿Cómo limpio una mancha de vino?", answer: "Espolvorea sal sobre la mancha para absorber el líquido y luego lava con agua fría y detergente." },
-    { question: "¿Qué hacer si pierdo mi tarjeta de crédito?", answer: "Contacta a tu banco de inmediato para bloquear la tarjeta y evitar cargos no autorizados." },
-    { question: "¿Cómo puedo organizar mi espacio de trabajo?", answer: "Deshazte de objetos innecesarios, usa organizadores y mantén los elementos esenciales a la mano." },
+    // Consultas sobre quién es el chatbot
+    { question: "¿Quién eres?", answer: "Soy un asistente virtual aquí para ayudarte con dudas sobre JavaScript y Python." },
+    { question: "¿Qué puedes hacer?", answer: "Puedo responder preguntas sobre JavaScript y Python, desde conceptos básicos hasta temas más avanzados. ¿Qué necesitas saber?" },
 
-    
-    // **Consejos generales**
-    { question: "¿Cómo puedo ahorrar dinero?", answer: "Intenta llevar un presupuesto mensual, evita compras impulsivas y busca ofertas en lo que necesites." },
-    { question: "¿Cómo puedo organizarme mejor?", answer: "Haz listas de tareas, utiliza una agenda y prioriza las actividades más importantes." },
-    { question: "¿Qué es bueno para el estrés?", answer: "El ejercicio, la meditación y dormir bien pueden ayudarte a reducir el estrés. ¿Te gustaría más consejos?" },
-    { question: "¿Cómo mejorar mi salud?", answer: "Come saludable, haz ejercicio regularmente y mantén una buena hidratación." },
-    
-    // **Curiosidades**
-    { question: "¿Cuál es el animal más rápido?", answer: "El guepardo es el animal terrestre más rápido, alcanzando hasta 112 km/h." },
-    { question: "¿Cuántos planetas hay?", answer: "Hay 8 planetas en nuestro sistema solar. Plutón es considerado un planeta enano." },
-    { question: "¿Qué tan grande es el Sol?", answer: "El Sol tiene un diámetro de aproximadamente 1,39 millones de kilómetros. ¡Es enorme!" },
-    { question: "¿Quién inventó la bombilla?", answer: "Thomas Edison es reconocido por inventar la bombilla incandescente." },
-    
-    // **Problemas comunes**
-    { question: "Mi computadora no enciende", answer: "Revisa si está conectada correctamente a la corriente y asegúrate de que el botón de encendido funcione." },
-    { question: "No puedo conectarme a internet", answer: "Verifica tu conexión Wi-Fi, reinicia tu router y asegúrate de que el servicio esté activo." },
-    { question: "¿Por qué mi página web no carga?", answer: "Revisa tu conexión a internet, limpia el caché del navegador o intenta con otro navegador." },
-    
-    // **Despedidas**
+    // Conceptos básicos de JavaScript
+    { question: "¿Qué es JavaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas." },
+    { question: "¿que es javaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas." },
+    { question: "Que es javaScript?", answer: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas e interactivas." },
+    { question: "¿Para qué sirve JavaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "¿Para que sirve javaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "Para qué sirve JavaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "para que sirve javaScript?", answer: "JavaScript sirve para desarrollar sitios web interactivos, crear aplicaciones web, manejar eventos en navegadores y mucho más. ¿Quieres aprender algún concepto específico?" },
+    { question: "¿Qué es el DOM en JavaScript?", answer: "El DOM (Document Object Model) es una interfaz que permite a JavaScript interactuar y modificar el contenido, la estructura y los estilos de una página web. ¿Necesitas ejemplos prácticos?" },
+    { question: "¿Qué es el DOM?", answer: "El DOM (Document Object Model) es una interfaz que permite a JavaScript interactuar y modificar el contenido, la estructura y los estilos de una página web. ¿Necesitas ejemplos prácticos?" },
+    { question: "¿Qué son las promesas en JavaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "¿Que son las promesas en JavaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "Que son las promesas en javaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "que son las promesas en javaScript?", answer: "Las promesas son una forma de manejar operaciones asíncronas en JavaScript. Te permiten trabajar con tareas que toman tiempo, como solicitudes a servidores. ¿Quieres un ejemplo?" },
+    { question: "¿Qué es async/await en JavaScript?", answer: "Async/await es una forma más sencilla de trabajar con promesas, haciendo que el código asíncrono parezca más lineal. ¿Te gustaría ver un ejemplo?" },
+    { question: "¿Cuál es la diferencia entre var, let y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "Cual es la diferencia entre var, let y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "cual es la diferencia entre var, let y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "cual es la diferencia entre var y const?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "cual es la diferencia entre var y let?", answer: "En JavaScript, la diferencia entre var, let y const es que var es una palabra clave que define variables mutables, let define variables mutables con un alcance de bloque, y const define variables inmutables" },
+    { question: "¿Qué son los tipos de datos en JavaScript?", answer: "Los tipos de datos en JavaScript son una forma de categorizar los datos en función de su uso y comportamiento, ¿deseas un ejemplo?" },
+    { question: "que son los tipos de datos en JavaScript?", answer: "Los tipos de datos en JavaScript son una forma de categorizar los datos en función de su uso y comportamiento, ¿deseas un ejemplo?" },
+    { question: "Tipos de datos en javascript", answer: "String, Number, Boolean" },
+    { question: "Dame los tipos de datos en javascript", answer: "String, Number, Boolean" },
+    { question: "datos en javascript", answer: "String, Number, Boolean" },
+    { question: "¿Qué es una función en JavaScript?", answer: "Una función en JavaScript es un conjunto de instrucciones que se define una vez y se puede ejecutar varias veces, ¿quieres un ejemplo?" },
+    { question: "¿Qué es un objeto en JavaScript?", answer: "Un objeto en JavaScript es una colección de propiedades que se utiliza para almacenar datos y entidades complejas" },
+    {
+        question: "ejemplo de datos en javascript", answer: `numero = 10
+    nombre = "variable Cadena"
+    es_activo = True
+    `},
+    {
+        question: "¿como se define una variable en Javascript?", answer: `numero = 10
+    nombre = "variable Cadena"
+    es_activo = True
+    `},
+
+
+    //ejemplos promesas
+    {
+        question: "Si, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "claro, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "Claro, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "si, dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "dame un ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+    {
+        question: "ejemplo de promesas", answer: `const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("¡Éxito!"), 1000);
+});` },
+
+    {
+        question: "Ejemplo de Funcion en javascript", answer: `function areaCuadrado(lado) {
+    return lado * lado;
+  }` },
+
+    {
+        question: "si, Ejemplo de funcion en javascript", answer: `function areaCuadrado(lado) {
+    return lado * lado;
+    }` },
+
+
+    // Conceptos básicos de Python
+    { question: "¿Qué es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "que es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "Que es Python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "python?", answer: "Python es un lenguaje de programación fácil de aprender, popular por su simplicidad y versatilidad. Se utiliza en ciencia de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "¿Para qué sirve Python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "para que sirve Python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "para qué sirve python?", answer: "Python se utiliza para crear scripts, análisis de datos, inteligencia artificial, desarrollo web y más." },
+    { question: "¿Qué son las listas en Python?", answer: "Las listas en Python son colecciones ordenadas y mutables que permiten almacenar elementos heterogéneos. ¿Te gustaría saber cómo se usan?" },
+    { question: "¿Que son las listas en Python?", answer: "Las listas en Python son colecciones ordenadas y mutables que permiten almacenar elementos heterogéneos. ¿Te gustaría saber cómo se usan?" },
+    { question: "que son las listas en python?", answer: "Las listas en Python son colecciones ordenadas y mutables que permiten almacenar elementos heterogéneos. ¿Te gustaría saber cómo se usan?" },
+    { question: "¿Qué son los diccionarios en Python?", answer: "Los diccionarios son estructuras de datos que almacenan pares clave-valor, ideales para buscar datos rápidamente." },
+    { question: "¿Qué es un bucle for en Python?", answer: "El bucle for en Python se utiliza para iterar sobre secuencias como listas, cadenas o rangos. ¿Quieres un ejemplo?" },
+    { question: "¿Qué son los tipos de datos en Python?", answer: "int, float, str, bool, list..." },
+    { question: "Que son los tipos de datos en Python?", answer: "int, float, str, bool, list..." },
+    { question: "que son los tipos de datos en python?", answer: "int, float, str, bool, list..." },
+    { question: "tipos de datos en python", answer: "int, float, str, bool, list..." },
+    { question: "¿Qué es un diccionario en Python?", answer: "Es una estructura de datos que almacena pares clave-valor" },
+    {
+        question: "ejemplo datos en Python", answer: `numero = 10
+        nombre = "variable Cadena"
+        es_activo = True
+    `},
+    {
+        question: "¿como se define una variable en Python?", answer: `numero = 10
+        nombre = "variable Cadena"
+        es_activo = True
+    `},
+
+    //ejemplos blucle
+    {
+        question: "dame ejemplo for en Python", answer: `for i in range(5): 
+    print(i)` },
+    {
+        question: "for en Python", answer: `for i in range(5): 
+    print(i)` },
+    {
+        question: "dame un ejemplo diccionarios en Python", answer: `diccionario = {"nombre": "Jhon", "edad": 25}
+        print(diccionario["nombre"]) 
+    ` },
+    {
+        question: "dame ejemplo lista en python", answer: `lista = [1, 2, 3]`
+    },
+
+
+    // Comparación entre JavaScript y Python
+    { question: "¿Cuál es mejor, JavaScript o Python?", answer: "Depende de tus objetivos. JavaScript es ideal para desarrollo web interactivo, mientras que Python es excelente para tareas de análisis de datos, inteligencia artificial y scripting. ¿Quieres saber cuándo usar cada uno?" },
+    { question: "Se puede usar Python para web como JavaScript?", answer: "Sí, con frameworks como Django o Flask puedes usar Python para desarrollo web. Sin embargo, JavaScript es esencial para crear interactividad en navegadores. ¿Te interesa aprender alguno de estos frameworks?" },
+
+    // Temas avanzados en JavaScript
+    { question: "¿Qué es un closure en JavaScript?", answer: "Un closure es una función que recuerda el ámbito donde se creó, incluso después de que ese ámbito haya terminado. ¿Quieres un ejemplo para entenderlo mejor?" },
+    { question: "¿Cómo funciona la herencia en JavaScript?", answer: "La herencia en JavaScript funciona a través de prototipos. Cada objeto puede heredar propiedades y métodos de otro objeto. ¿Te gustaría un ejemplo práctico?" },
+    { question: "¿Qué es un callback en JavaScript?", answer: "Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que esta última termine. ¿Necesitas un ejemplo sencillo?" },
+
+    // Temas avanzados en Python
+    { question: "¿Qué son los decoradores en Python?", answer: "Los decoradores son funciones que modifican el comportamiento de otras funciones o métodos. Son útiles para reutilizar código. ¿Te gustaría saber cómo se usan?" },
+    { question: "¿Cómo manejar errores en Python?", answer: "Puedes manejar errores en Python con bloques try-except. Esto te permite capturar y gestionar excepciones. ¿Quieres un ejemplo básico?" },
+    { question: "¿Qué es un generador en Python?", answer: "Un generador es una función que devuelve un iterador y utiliza la palabra clave 'yield' en lugar de 'return'. ¿Te gustaría ver un ejemplo práctico?" },
+
+    // Buenas prácticas y aprendizaje
+    { question: "¿Cómo aprender JavaScript?", answer: "Te recomiendo empezar con los conceptos básicos como variables, funciones y eventos en el DOM. Luego puedes avanzar hacia temas como promesas y async/await. ¿Quieres recursos específicos?" },
+    { question: "¿Cómo aprender Python?", answer: "Puedes empezar con los fundamentos como variables, listas y bucles, y luego explorar bibliotecas como NumPy o Django según tus intereses. ¿Quieres ejemplos básicos?" },
+    { question: "¿Cuáles son las mejores prácticas en JavaScript?", answer: "Algunas mejores prácticas son: mantener el código limpio, usar funciones puras, evitar variables globales y escribir pruebas unitarias. ¿Quieres que te explique alguna en detalle?" },
+    { question: "¿Cuáles son las mejores prácticas en Python?", answer: "Algunas mejores prácticas en Python incluyen: usar nombres de variables descriptivos, seguir PEP 8, manejar excepciones correctamente y escribir pruebas. ¿Te interesa algún tema en particular?" },
+
+    // Preguntas de ayuda directa
+    { question: "Me puedes ayudar con JavaScript?", answer: "¡Claro que sí! Dime, ¿qué necesitas aprender o resolver en JavaScript?" },
+    { question: "Me puedes ayudar con Python?", answer: "¡Por supuesto! ¿Qué duda tienes sobre Python?" },
+    { question: "Tienes ejemplos de código en JavaScript?", answer: "¡Sí! Dime qué necesitas, y te proporcionaré ejemplos en JavaScript." },
+    { question: "Tienes ejemplos de código en Python?", answer: "¡Claro! Dime qué tema necesitas, y te proporcionaré ejemplos en Python." },
+
+    // Despedidas
     { question: "Adiós", answer: "¡Hasta pronto! Que tengas un buen día." },
-    { question: "adios", answer: "¡Hasta pronto! Que tengas un buen día." },
-    { question: "Nos vemos", answer: "¡Claro! Espero verte de nuevo." },
     { question: "Gracias", answer: "¡De nada! Estoy aquí para ayudarte siempre que lo necesites." },
+    { question: "Nos vemos", answer: "¡Claro! Espero verte de nuevo." },
     { question: "Chao", answer: "¡Adiós! Cuídate." },
-    
-    // **Ocio y entretenimiento**
-    { question: "¿Qué libro me recomiendas?", answer: "Si te gusta la ficción, prueba 'Cien años de soledad' de Gabriel García Márquez o 'El Principito' de Antoine de Saint-Exupéry." },
-    { question: "¿Qué película me recomiendas?", answer: "Si te gustan los clásicos, prueba 'Forrest Gump'. Para algo reciente, prueba 'Dune'." },
-    { question: "¿Qué música puedo escuchar?", answer: "Depende de tu estilo. Si buscas algo tranquilo, prueba música instrumental o jazz. Si quieres algo animado, prueba pop o reguetón." },
-    
-    // **Estilo de vida**
-    { question: "¿Cómo puedo aprender un idioma?", answer: "Usa apps como Duolingo, mira películas en ese idioma y practica hablando con nativos." },
-    { question: "¿Qué deporte es bueno para mí?", answer: "Elige algo que disfrutes. Puede ser caminar, nadar o incluso yoga. ¡La clave es moverte!" },
-    { question: "¿Qué es bueno para la piel?", answer: "Usa protector solar, mantente hidratado y limpia tu piel regularmente." },
-    
-    // **Temas avanzados**
-    { question: "¿Qué es un algoritmo?", answer: "Un algoritmo es un conjunto de pasos o instrucciones para resolver un problema o realizar una tarea." },
-    { question: "¿Qué es un modelo preentrenado?", answer: "Es un modelo de machine learning que ya ha sido entrenado en un conjunto de datos y puede ser reutilizado para tareas específicas." },
-    { question: "¿Qué es inteligencia artificial?", answer: "La inteligencia artificial es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana." },
-    { question: "¿Qué es big data?", answer: "Big data se refiere a grandes volúmenes de datos que no pueden ser procesados con herramientas tradicionales debido a su tamaño y complejidad." },
-    { question: "¿Qué es un framework?", answer: "Un framework es una estructura o entorno predefinido que facilita el desarrollo de aplicaciones." },
-    
-    // **Salud**
-    { question: "¿Cuántos litros de agua debo beber al día?", answer: "Se recomienda beber alrededor de 2 litros (8 vasos) al día, aunque puede variar según tu actividad física y clima." },
-    { question: "¿Qué hago si me duele la cabeza?", answer: "Descansa en un lugar tranquilo, bebe agua y, si persiste, consulta a un médico." },
-    { question: "¿Qué alimentos son buenos para la digestión?", answer: "Las frutas como la papaya, el yogur, los cereales integrales y las verduras son excelentes para mejorar la digestión." },
 
-    // **Curiosidades**
-    { question: "¿Qué es el aprendizaje profundo?", answer: "El aprendizaje profundo es una subrama del machine learning que utiliza redes neuronales con muchas capas." },
-    { question: "¿Qué es un chatbot?", answer: "Un chatbot es un programa diseñado para simular conversaciones con usuarios." },
-    { question: "¿Qué es GitHub?", answer: "GitHub es una plataforma para alojar y colaborar en proyectos de desarrollo de software utilizando control de versiones con Git." },
-    { question: "¿Qué es dolor?", answer: "Es el proceso por el cual una persona a traves de los nervios siente una punsada que llega al cerebro y lo procesa como dolor." },
-    { question: "¿Cuál es el país más grande del mundo?", answer: "Rusia es el país más grande del mundo, con una superficie de más de 17 millones de kilómetros cuadrados." },
-    { question: "¿Quién inventó Internet?", answer: "Internet fue desarrollado por ARPANET, un proyecto del Departamento de Defensa de los Estados Unidos en la década de 1960." },
-    { question: "¿Qué tan profundo es el océano?", answer: "El punto más profundo es la Fosa de las Marianas, que alcanza casi 11 km de profundidad." },
-    { question: "¿Dónde aprender Python?", answer: "Puedes aprender Python en plataformas como Codecademy, freeCodeCamp o con tutoriales en YouTube." },
-    { question: "¿Qué libros recomiendas para aprender programación?", answer: "Prueba 'Automate the Boring Stuff with Python' de Al Sweigart o 'Eloquent JavaScript' de Marijn Haverbeke." },
-    { question: "¿Cómo empezar con inteligencia artificial?", answer: "Comienza con cursos básicos en plataformas como Coursera, edX o la documentación de TensorFlow." },
-    { question: "¿Por que ella no me ama?", answer: "Porque seguramente no hiciste el esfuerzo correcto para corresponder tus sentimientos" },
-    { question: "¿Quien es el auxiliar del curso?", answer: "No cuento con esa informacion tan especifica" },
-    { question: "¿Ella me ama?", answer: "Posiblemente no, pero del amor al odio solo hay un paso" },
-    { question: "¿Porque me canso mucho?", answer: "Porque estas deprimido" },
-    { question: "¿Por qué el cielo es azul?", answer: "El cielo se ve azul porque las moléculas de la atmósfera dispersan la luz azul del sol más que otros colores." },
-    { question: "¿Quién fue Albert Einstein?", answer: "Einstein fue un físico famoso por desarrollar la teoría de la relatividad y contribuir al entendimiento de la física moderna." },
-    { question: "¿Cuánto pesa la Tierra?", answer: "La masa de la Tierra es aproximadamente 5.97 × 10^24 kilogramos." },
+    // Curiosidades
+    { question: "Dame un dato curioso sobre Python", answer: "Python fue nombrado así en honor al grupo cómico británico 'Monty Python', no por la serpiente." },
+    { question: "Dame un dato curioso sobre JavaScript", answer: "JavaScript fue creado en solo 10 días por Brendan Eich en 1995." },
+    { question: "¿Sabes algo interesante sobre Python?", answer: "Python se utiliza en muchas películas para efectos visuales, como en 'Avatar'." },
+    { question: "¿Sabes algo interesante sobre JavaScript?", answer: "JavaScript no tiene relación con Java, a pesar de su nombre." },
 
-    // **Entretenimiento**
-    { question: "¿Cuál es la película más taquillera de la historia?", answer: "Actualmente, 'Avatar' es la película más taquillera de la historia." },
-    { question: "¿Qué series son populares en Netflix?", answer: "Series populares incluyen 'Stranger Things', 'The Witcher' y 'The Crown'." },
-    { question: "¿Dónde puedo escuchar música gratis?", answer: "Plataformas como Spotify, YouTube y SoundCloud ofrecen opciones gratuitas para escuchar música." },
-    { question: "¿Quien es el auxiliar del curso?", answer: "No cuento con esa informacion tan especifica" },
-    { question: "¿Que carrera es la más dificil?", answer: "Ingenieria" },
-    { question: "¿Que es la luna?", answer: "Es el satelite del planteta tierra" },
-    { question: "¿Existen los Aliens?", answer: "No, es posible confirmar la veracidad de ellos, pero puede que si y puede que no" },
+    // Preguntas cotidianas
+    { question: "¿Qué día es hoy?", answer: `Hoy es ${new Date().toLocaleDateString()}.` },
+    { question: "¿Qué hora es?", answer: `Son aproximadamente las ${new Date().toLocaleTimeString()}.` },
+    { question: "¿Qué hago si estoy aburrido?", answer: "Puedes aprender algo nuevo como JavaScript o Python. ¿Te interesa?" },
+    { question: "¿Qué me recomiendas para ver?", answer: "¿Qué tal un tutorial sobre JavaScript o Python? ¡Es divertido y útil!" },
 
-    //** universales
-    { question: "¿Por qué el pan cuadrado viene en bolsas y el pan redondo en cajas?", answer: "Porque el pan redondo tiene más ego y quiere verse más elegante." },
-    { question: "¿Las cebras son blancas con rayas negras o negras con rayas blancas?", answer: "Son negras con rayas blancas, pero no se preocupan por definiciones." },
-    { question: "¿Los pingüinos tienen rodillas?", answer: "Sí, pero están escondidas bajo su plumaje. ¡Son tímidas!" },
-    { question: "¿Qué pasa si pongo una cuchara en el microondas?", answer: "Probablemente verás un espectáculo de chispas, pero no lo intentes en casa." },
-    { question: "¿Por qué no puedo lamerme el codo?", answer: "Es una habilidad reservada para los superhéroes... o los muy flexibles." },
-    { question: "¿Cómo saben las uvas si deben ser vino o pasas?", answer: "Tienen una reunión familiar y lo deciden democráticamente." },
-    { question: "¿Por qué las ovejas no encogen cuando llueve?", answer: "Porque tienen un contrato exclusivo con las leyes de la física." },
-    { question: "¿Los peces tienen sed?", answer: "No, pero si lo tuvieran, lo tendrían fácil." },
-    { question: "¿Los zombies pueden ser vegetarianos?", answer: "Solo si encuentran cerebros de tofu." },
-    { question: "¿Puedo guardar pizza en mi bolsillo?", answer: "Claro, pero no será buena idea si llevas pantalones blancos." },
-    { question: "¿Qué pasaría si el sol se apagara?", answer: "Tendrás una excusa perfecta para usar linterna todo el tiempo." },
-    { question: "¿Qué fue primero, el huevo o la gallina?", answer: "Primero fue el debate interminable entre ambas." },
-    { question: "¿Por qué las almohadas nunca están frías por ambos lados?", answer: "Porque una siempre está en modo 'calor hogareño'." },
-    { question: "¿Puedo atrapar un arcoíris?", answer: "Solo si tienes un frasco de magia ilimitada." },
-    { question: "¿Por qué los pájaros no se electrocutan en los cables?", answer: "Porque no pagan la factura eléctrica." },
-    { question: "¿Qué hacen las abejas en su tiempo libre?", answer: "Van al 'zum-bar' a relajarse con una buena mielada." },
-    { question: "¿Por qué no puedo encontrar mi otro calcetín?", answer: "Es porque tiene una vida secreta como ninja." },
-    { question: "¿Qué pasaría si los gatos dominaran el mundo?", answer: "Los humanos seríamos sus empleados a tiempo completo, pero ¿no lo somos ya?" },
-    { question: "¿Por qué los relojes van en círculo?", answer: "Porque si fueran cuadrados, perderían su encanto." },
-    { question: "¿Por qué los espaguetis no tienen cuchara propia?", answer: "Porque son independientes y les gusta complicarte la vida." },
 
-    // Preguntas emocionales
-    { question: "¿Por qué me siento solo?", answer: "A veces la soledad nos enseña mucho. Habla con alguien que te valore." },
-    { question: "¿Cómo puedo ser feliz?", answer: "Encuentra tiempo para lo que amas y rodéate de quienes te valoran." },
-    { question: "¿Qué significa la vida?", answer: "La vida es lo que haces de ella. Encuentra lo que te hace feliz." },  
+    /** 
+     * en ingles 
+     * */
+
+    // Basic greetings
+    { question: "Hello?", answer: "Hi! I can help you with questions about JavaScript and Python. How can I assist you?" },
+    { question: "Good evening?", answer: "Good evening! Do you have any questions about JavaScript or Python?" },
+    { question: "Good morning?", answer: "Good morning! Would you like to learn something new about JavaScript or Python?" },
+    { question: "How are you?", answer: "I'm ready to help! What do you need to know about JavaScript or Python?" },
+    { question: "What are you doing?", answer: "I'm a virtual assistant designed to answer questions about JavaScript and Python. How can I help you?" },
+
+    // Questions about the chatbot
+    { question: "Who are you?", answer: "I am a virtual assistant here to help you with questions about JavaScript and Python." },
+    { question: "What can you do?", answer: "I can answer questions about JavaScript and Python, from basic concepts to more advanced topics. What do you need to know?" },
+
+    // Basic JavaScript Concepts
+    { question: "What is JavaScript?", answer: "JavaScript is a programming language primarily used to create dynamic and interactive web pages." },
+    { question: "what is JavaScript?", answer: "JavaScript is a programming language primarily used to create dynamic and interactive web pages." },
+    { question: "What is javaScript?", answer: "JavaScript is a programming language primarily used to create dynamic and interactive web pages." },
+    { question: "What is JavaScript used for?", answer: "JavaScript is used to develop interactive websites, build web applications, handle browser events, and much more. Would you like to learn about any specific concept?" },
+    { question: "what is javaScript used for?", answer: "JavaScript is used to develop interactive websites, build web applications, handle browser events, and much more. Would you like to learn about any specific concept?" },
+    { question: "What is the DOM in JavaScript?", answer: "The DOM (Document Object Model) is an interface that allows JavaScript to interact with and modify the content, structure, and styles of a web page. Do you need practical examples?" },
+    { question: "What is the DOM?", answer: "The DOM (Document Object Model) is an interface that allows JavaScript to interact with and modify the content, structure, and styles of a web page. Do you need practical examples?" },
+    { question: "What are promises in JavaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They allow you to work with tasks that take time, such as server requests. Would you like an example?" },
+    { question: "what are promises in JavaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They allow you to work with tasks that take time, such as server requests. Would you like an example?" },
+    { question: "What are promises in javaScript?", answer: "Promises are a way to handle asynchronous operations in JavaScript. They allow you to work with tasks that take time, such as server requests. Would you like an example?" },
+    { question: "What is async/await in JavaScript?", answer: "Async/await is a simpler way to work with promises, making asynchronous code look more linear. Would you like to see an example?" },
+    { question: "What is the difference between var, let, and const?", answer: "In JavaScript, the difference is that var defines mutable variables, let defines block-scoped mutable variables, and const defines immutable variables." },
+    { question: "what is the difference between var, let, and const?", answer: "In JavaScript, the difference is that var defines mutable variables, let defines block-scoped mutable variables, and const defines immutable variables." },
+    { question: "What is the difference between var and const?", answer: "In JavaScript, var defines mutable variables while const defines immutable variables." },
+    { question: "What is the difference between var and let?", answer: "In JavaScript, var defines mutable variables while let defines block-scoped mutable variables." },
+    { question: "What are data types in JavaScript?", answer: "Data types in JavaScript are ways to categorize data based on their use and behavior." },
+    { question: "what are data types in JavaScript?", answer: "Data types in JavaScript are ways to categorize data based on their use and behavior." },
+    { question: "Data types in JavaScript", answer: "String, Number, Boolean" },
+    { question: "Give me the data types in JavaScript", answer: "String, Number, Boolean" },
+    { question: "Data in JavaScript", answer: "String, Number, Boolean" },
+    { question: "What is a function in JavaScript?", answer: "A function in JavaScript is a set of instructions that is defined once and can be executed multiple times." },
+    { question: "What is an object in JavaScript?", answer: "An object in JavaScript is a collection of properties used to store data and complex entities." },
+    {
+        question: "Example of data in JavaScript", answer: `number = 10
+    name = "String variable"
+    isActive = true
+    `},
+    {
+        question: "How do you define a variable in JavaScript?", answer: `number = 10
+    name = "String variable"
+    isActive = true
+    `},
+
+    // Promises Examples
+    {
+        question: "Yes, give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "Sure, give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "sure, give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "Give me an example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+    {
+        question: "example of promises", answer: `const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});` },
+
+    {
+        question: "Example of a function in JavaScript", answer: `function squareArea(side) {
+    return side * side;
+  }` },
+
+    {
+        question: "Yes, example of a function in JavaScript", answer: `function squareArea(side) {
+    return side * side;
+    }` },
+
+    // Basic Python Concepts
+    { question: "What is Python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "what is Python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "What is python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "python?", answer: "Python is an easy-to-learn programming language, popular for its simplicity and versatility. It is used in data science, artificial intelligence, web development, and more." },
+    { question: "What is Python used for?", answer: "Python is used for scripting, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
+    { question: "what is Python used for?", answer: "Python is used for scripting, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
+    { question: "What is Python for?", answer: "Python is used for scripting, data analysis, artificial intelligence, web development, and more. What would you like to focus on?" },
+    { question: "What are lists in Python?", answer: "Lists in Python are ordered and mutable collections that allow you to store heterogeneous elements. Would you like to know how to use them?" },
+    { question: "What are dictionaries in Python?", answer: "Dictionaries are data structures that store key-value pairs, ideal for quickly looking up data." },
+    { question: "What is a for loop in Python?", answer: "The for loop in Python is used to iterate over sequences such as lists, strings, or ranges. Would you like an example?" },
+    { question: "What are data types in Python?", answer: "int, float, str, bool, list..." },
+    { question: "What is a dictionary in Python?", answer: "A dictionary in Python is a data structure that stores key-value pairs, ideal for fast lookups." },
+
+
+    {
+        question: "example of data in Python", answer: `number = 10
+            name = "string variable"
+            is_active = True
+        `},
+    {
+        question: "how to define a variable in Python?", answer: `number = 10
+            name = "string variable"
+            is_active = True
+        `},
+
+    // loop examples
+    {
+        question: "example of for loop in Python", answer: `for i in range(5): 
+        print(i)` },
+    {
+        question: "for loop in Python", answer: `for i in range(5): 
+        print(i)` },
+    {
+        question: "Yes, give me an example of dictionaries in Python", answer: `dictionary = {"name": "John", "age": 25}
+            print(dictionary["name"]) 
+        ` },
+    {
+        question: "example of list in Python", answer: `list = [1, 2, 3]`
+    },
+
+    // Comparison between JavaScript and Python
+    { question: "Which is better, JavaScript or Python?", answer: "It depends on your goals. JavaScript is great for interactive web development, while Python excels in data analysis, artificial intelligence, and scripting. Would you like to know when to use each?" },
+    { question: "Can Python be used for the web like JavaScript?", answer: "Yes, with frameworks like Django or Flask, you can use Python for web development. However, JavaScript is essential for creating interactivity in browsers. Are you interested in learning any of these frameworks?" },
+
+    // Advanced topics in JavaScript
+    { question: "What is a closure in JavaScript?", answer: "A closure is a function that remembers the scope where it was created, even after that scope has ended. Would you like an example to understand it better?" },
+    { question: "How does inheritance work in JavaScript?", answer: "Inheritance in JavaScript works through prototypes. Each object can inherit properties and methods from another object. Would you like a practical example?" },
+    { question: "What is a callback in JavaScript?", answer: "A callback is a function passed as an argument to another function and executed after the latter finishes. Do you need a simple example?" },
+
+    // Advanced topics in Python
+    { question: "What are decorators in Python?", answer: "Decorators are functions that modify the behavior of other functions or methods. They're useful for reusing code. Would you like to know how they work?" },
+    { question: "How to handle errors in Python?", answer: "You can handle errors in Python using try-except blocks. This allows you to capture and manage exceptions. Would you like a basic example?" },
+    { question: "What is a generator in Python?", answer: "A generator is a function that returns an iterator and uses the 'yield' keyword instead of 'return'. Would you like a practical example?" },
+
+    // Best practices and learning
+    { question: "How to learn JavaScript?", answer: "I recommend starting with basic concepts like variables, functions, and DOM events. Then you can move on to topics like promises and async/await. Do you want specific resources?" },
+    { question: "How to learn Python?", answer: "You can start with fundamentals like variables, lists, and loops, then explore libraries like NumPy or Django based on your interests. Do you want basic examples?" },
+    { question: "What are the best practices in JavaScript?", answer: "Some best practices include: keeping code clean, using pure functions, avoiding global variables, and writing unit tests. Would you like me to explain one in detail?" },
+    { question: "What are the best practices in Python?", answer: "Some best practices in Python include: using descriptive variable names, following PEP 8, handling exceptions properly, and writing tests. Are you interested in any specific topic?" },
+
+    // Direct help requests
+    { question: "Can you help me with JavaScript?", answer: "Of course! Tell me, what do you need to learn or solve in JavaScript?" },
+    { question: "Can you help me with Python?", answer: "Absolutely! What question do you have about Python?" },
+    { question: "Do you have code examples in JavaScript?", answer: "Yes! Let me know what you need, and I'll provide examples in JavaScript." },
+    { question: "Do you have code examples in Python?", answer: "Sure! Let me know what topic you need, and I'll provide examples in Python." },
+
+    // Farewells
+    { question: "Goodbye", answer: "See you soon! Have a great day." },
+    { question: "Thanks", answer: "You're welcome! I'm here to help whenever you need." },
+    { question: "See you", answer: "Sure! I hope to see you again." },
+    { question: "Bye", answer: "Goodbye! Take care." },
+
+    // Curiosities
+    { question: "Tell me an interesting fact about Python", answer: "Python was named after the British comedy group 'Monty Python', not the snake." },
+    { question: "Tell me an interesting fact about JavaScript", answer: "JavaScript was created in just 10 days by Brendan Eich in 1995." },
+    { question: "Did you know something interesting about Python?", answer: "Python is used in many movies for visual effects, such as in 'Avatar'." },
+    { question: "Did you know something interesting about JavaScript?", answer: "JavaScript has no relation to Java, despite its name." },
+
+    // Everyday questions
+    { question: "What day is it today?", answer: `Today is ${new Date().toLocaleDateString()}.` },
+    { question: "What time is it?", answer: `It's approximately ${new Date().toLocaleTimeString()}.` },
+    { question: "What should I do if I'm bored?", answer: "You can learn something new like JavaScript or Python. Are you interested?" },
+    { question: "What do you recommend to watch?", answer: "How about a tutorial on JavaScript or Python? It's fun and useful!" },
 ];
-  
