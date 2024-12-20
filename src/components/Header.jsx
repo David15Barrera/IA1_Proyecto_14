@@ -51,7 +51,7 @@ const Header = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-md shadow-lg text-center">
-            <h2 className="text-gray-700 font-bold mb-4">Análisis de Diseño 2</h2>
+            <h2 className="text-gray-700 font-bold mb-4">Inteligencia Artificial 1</h2>
             <p className="text-gray-700 mb-6">Proyecto fase 2 - Contactar con soporte técnico</p>
             <button
               onClick={toggleModal}
