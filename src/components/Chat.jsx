@@ -116,7 +116,7 @@ const Chat = ({ messages, setMessages }) => {
     const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
     const bestMatchIndex = similarities.argMax(1).arraySync()[0];
 
-    return faqData[bestMatchIndex]?.answer || "Lo siento, Solo puedo ayudarte con consultas relacionadas con Python y Javascript";
+    return faqData[bestMatchIndex]?.answer || "Lo siento, Solo puedo ayudarte con consultas relacionadas con Python, Javascript, Libros y Musica";
   };
 
   // Manejar el envío de mensajes
