@@ -1,0 +1,62 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hello", "Hi", "Hey", "Hola", "Good morning", "Good evening"],
+        "responses": ["Hello! Let's talk about JavaScript and Python.", "Hi there! What do you want to know about programming?", "Hey! How can I assist you with JavaScript or Python?"],
+        "context": [""]
+      },
+      {
+        "tag": "javascript_basics",
+        "patterns": ["What is JavaScript?", "Tell me about JavaScript", "What can I do with JavaScript?", "Uses of JavaScript"],
+        "responses": [
+          "JavaScript is a versatile programming language mainly used for web development. It allows you to create interactive elements on websites.",
+          "JavaScript is often used to develop dynamic and interactive web applications. It can also be used for backend development with Node.js."
+        ],
+        "context": [""]
+      },
+      {
+        "tag": "python_basics",
+        "patterns": ["What is Python?", "Tell me about Python", "What can I do with Python?", "Uses of Python"],
+        "responses": [
+          "Python is a high-level, versatile programming language known for its simplicity and readability. It's used in web development, data science, AI, and more.",
+          "Python is widely used in fields like machine learning, automation, and data analysis due to its extensive libraries and frameworks."
+        ],
+        "context": [""]
+      },
+      {
+        "tag": "python_vs_javascript",
+        "patterns": ["Which is better, Python or JavaScript?", "Python vs JavaScript", "Should I learn Python or JavaScript?"],
+        "responses": [
+          "It depends on your goals! Python is great for data science, AI, and backend development, while JavaScript is essential for web development.",
+          "Both are valuable skills. Learn Python for simplicity and versatility; learn JavaScript for web-focused development."
+        ],
+        "context": [""]
+      },
+      {
+        "tag": "learn_javascript",
+        "patterns": ["How do I learn JavaScript?", "Best way to learn JavaScript", "Resources for learning JavaScript"],
+        "responses": [
+          "Start with online platforms like FreeCodeCamp or Codecademy. Practice regularly by building small projects.",
+          "Learn JavaScript by exploring tutorials on MDN Web Docs and experimenting with code on platforms like CodePen or JSFiddle."
+        ],
+        "context": [""]
+      },
+      {
+        "tag": "learn_python",
+        "patterns": ["How do I learn Python?", "Best way to learn Python", "Resources for learning Python"],
+        "responses": [
+          "You can start learning Python through resources like Python.org, Codecademy, or books like 'Automate the Boring Stuff with Python'.",
+          "Practice Python by solving problems on platforms like LeetCode or Kaggle, and experiment with libraries like NumPy and pandas."
+        ],
+        "context": [""]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Goodbye", "Bye", "See you later", "Talk to you soon"],
+        "responses": ["Goodbye! Keep learning JavaScript and Python!", "Bye! Don't forget to practice coding.", "See you! Happy programming!"],
+        "context": [""]
+      }
+    ]
+  }
+  
