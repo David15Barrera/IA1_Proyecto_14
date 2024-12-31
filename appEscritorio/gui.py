@@ -1,20 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 25 18:06:21 2021
-
-@author: shrey
-"""
-
-#Creating GUI with tkinter
 import tkinter
 from tkinter import *
 import chat
-import speech_recognition as s
-from google_trans_new import google_translator
-from googletrans import Translator
-
-translator = google_translator()
-translator = Translator()
 
 def enviar():
     mensaje = EntryBox.get("1.0", 'end-1c').strip()
