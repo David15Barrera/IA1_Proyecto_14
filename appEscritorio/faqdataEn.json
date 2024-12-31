@@ -2,59 +2,91 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hola", "Hola", "Hola", "Hola", "Buenos días", "Buenas noches"],
-      "responses": ["¡Hola! Hablemos sobre JavaScript y Python.", "¡Hola! ¿Qué quieres saber sobre programación?", "¡Hola! ¿Cómo puedo ayudarte con JavaScript o Python?"],
+      "patterns": ["Hola", "Hola, ¿qué tal?", "Buenos días", "Buenas tardes", "¿Cómo estás?", "¿Qué tal?", "¿Cómo te va?"],
+      "responses": ["¡Hola! Hablemos de JavaScript y Python.", "¡Hola! ¿Qué te gustaría saber sobre programación?", "¡Hola! ¿En qué puedo ayudarte con JavaScript o Python?"],
       "context": [""]
     },
     {
       "tag": "javascript_basics",
-      "patterns": ["¿Qué es JavaScript?", "Háblame de JavaScript", "¿Qué puedo hacer con JavaScript?", "Usos de JavaScript"],
+      "patterns": ["¿Qué es JavaScript?", "Háblame de JavaScript", "¿Qué puedo hacer con JavaScript?", "Usos de JavaScript", "¿Cómo se usa JavaScript?", "Ejemplos de JavaScript"],
       "responses": [
-        "JavaScript es un lenguaje de programación versátil utilizado principalmente para el desarrollo web. Permite crear elementos interactivos en sitios web.",
-        "JavaScript se utiliza a menudo para desarrollar aplicaciones web dinámicas e interactivas. También se puede usar para desarrollo backend con Node.js."
+        "JavaScript es un lenguaje de programación versátil que se utiliza principalmente para el desarrollo web. Permite crear elementos interactivos en los sitios web.",
+        "JavaScript se usa a menudo para desarrollar aplicaciones web dinámicas e interactivas. También se puede usar para desarrollo backend con Node.js.",
+        "Aquí tienes un ejemplo simple de código en JavaScript:\n```javascript\nconsole.log('¡Hola, JavaScript!');\n```"
       ],
       "context": [""]
     },
     {
       "tag": "python_basics",
-      "patterns": ["¿Qué es Python?", "Háblame de Python", "¿Qué puedo hacer con Python?", "Usos de Python"],
+      "patterns": ["¿Qué es Python?", "Háblame de Python", "¿Qué puedo hacer con Python?", "Usos de Python", "¿Cómo se usa Python?", "Ejemplos de Python"],
       "responses": [
-        "Python es un lenguaje de programación de alto nivel, versátil, conocido por su simplicidad y legibilidad. Se utiliza en desarrollo web, ciencia de datos, inteligencia artificial y más.",
-        "Python es ampliamente usado en campos como aprendizaje automático, automatización y análisis de datos gracias a sus extensas bibliotecas y frameworks."
+        "Python es un lenguaje de programación de alto nivel, versátil, conocido por su simplicidad y legibilidad. Se usa en desarrollo web, ciencia de datos, IA y más.",
+        "Python se utiliza ampliamente en áreas como aprendizaje automático, automatización y análisis de datos debido a sus bibliotecas y frameworks extensos.",
+        "Aquí tienes un ejemplo simple de código en Python:\n```python\nprint('¡Hola, Python!')\n```"
       ],
       "context": [""]
     },
     {
-      "tag": "python_vs_javascript",
-      "patterns": ["¿Cuál es mejor, Python o JavaScript?", "Python vs JavaScript", "¿Debería aprender Python o JavaScript?"],
+      "tag": "conditionals",
+      "patterns": ["¿Qué son los condicionales en Python?", "Explica los condicionales en JavaScript", "Ejemplos de if-else en Python", "¿Cómo escribir un if en JavaScript?"],
       "responses": [
-        "¡Depende de tus objetivos! Python es ideal para ciencia de datos, inteligencia artificial y desarrollo backend, mientras que JavaScript es esencial para el desarrollo web.",
-        "Ambos son habilidades valiosas. Aprende Python por su simplicidad y versatilidad; aprende JavaScript para un desarrollo enfocado en la web."
+        "En Python, los condicionales se escriben usando las palabras clave `if`, `elif` y `else`. Aquí tienes un ejemplo:\n```python\nx = 10\nif x > 5:\n    print('x es mayor que 5')\nelif x == 5:\n    print('x es igual a 5')\nelse:\n    print('x es menor que 5')\n```",
+        "En JavaScript, los condicionales se escriben usando `if`, `else if` y `else`. Aquí tienes un ejemplo:\n```javascript\nlet x = 10;\nif (x > 5) {\n  console.log('x es mayor que 5');\n} else if (x === 5) {\n  console.log('x es igual a 5');\n} else {\n  console.log('x es menor que 5');\n}\n```"
       ],
       "context": [""]
     },
     {
-      "tag": "learn_javascript",
-      "patterns": ["¿Cómo aprendo JavaScript?", "La mejor manera de aprender JavaScript", "Recursos para aprender JavaScript"],
+      "tag": "loops",
+      "patterns": ["¿Cómo escribir bucles en Python?", "Explica los bucles en JavaScript", "Ejemplos de for en Python", "¿Cómo usar while en JavaScript?"],
       "responses": [
-        "Comienza con plataformas en línea como FreeCodeCamp o Codecademy. Practica regularmente creando pequeños proyectos.",
-        "Aprende JavaScript explorando tutoriales en MDN Web Docs y experimentando con código en plataformas como CodePen o JSFiddle."
+        "En Python, puedes usar bucles `for` y `while`. Aquí tienes un ejemplo de un bucle `for`:\n```python\nfor i in range(5):\n    print(i)\n```\nY aquí tienes un ejemplo de un bucle `while`:\n```python\nx = 0\nwhile x < 5:\n    print(x)\n    x += 1\n```",
+        "En JavaScript, puedes usar bucles `for`, `while` y `do-while`. Aquí tienes un ejemplo de un bucle `for`:\n```javascript\nfor (let i = 0; i < 5; i++) {\n  console.log(i);\n}\n```\nY aquí tienes un ejemplo de un bucle `while`:\n```javascript\nlet x = 0;\nwhile (x < 5) {\n  console.log(x);\n  x++;\n}\n```"
       ],
       "context": [""]
     },
     {
-      "tag": "learn_python",
-      "patterns": ["¿Cómo aprendo Python?", "La mejor manera de aprender Python", "Recursos para aprender Python"],
+      "tag": "functions",
+      "patterns": ["¿Cómo escribir una función en Python?", "Explica las funciones en JavaScript", "Ejemplos de funciones en Python", "¿Cómo usar funciones en JavaScript?"],
       "responses": [
-        "Puedes comenzar a aprender Python a través de recursos como Python.org, Codecademy o libros como 'Automatiza tareas aburridas con Python'.",
-        "Practica Python resolviendo problemas en plataformas como LeetCode o Kaggle, y experimenta con bibliotecas como NumPy y pandas."
+        "En Python, defines funciones usando la palabra clave `def`. Aquí tienes un ejemplo:\n```python\ndef saludar(nombre):\n    return f'¡Hola, {nombre}!'\nprint(saludar('Mundo'))\n```",
+        "En JavaScript, defines funciones usando la palabra clave `function` o la sintaxis de flecha. Aquí tienes un ejemplo:\n```javascript\nfunction saludar(nombre) {\n  return `¡Hola, ${nombre}!`;\n}\nconsole.log(saludar('Mundo'));\n```",
+        "Usando funciones de flecha en JavaScript:\n```javascript\nconst saludar = (nombre) => `¡Hola, ${nombre}!`;\nconsole.log(saludar('Mundo'));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "data_structures",
+      "patterns": ["Explica listas en Python", "¿Qué son los arrays en JavaScript?", "¿Cómo usar diccionarios en Python?", "Ejemplos de objetos en JavaScript"],
+      "responses": [
+        "En Python, las listas se utilizan para almacenar múltiples elementos. Ejemplo:\n```python\nfrutas = ['manzana', 'banana', 'cereza']\nprint(frutas[0])  # Salida: manzana\n```",
+        "En JavaScript, los arrays se utilizan para almacenar múltiples elementos. Ejemplo:\n```javascript\nlet frutas = ['manzana', 'banana', 'cereza'];\nconsole.log(frutas[0]);  // Salida: manzana\n```",
+        "En Python, los diccionarios almacenan pares clave-valor. Ejemplo:\n```python\npersona = {'nombre': 'Alice', 'edad': 25}\nprint(persona['nombre'])  # Salida: Alice\n```",
+        "En JavaScript, los objetos almacenan pares clave-valor. Ejemplo:\n```javascript\nlet persona = { nombre: 'Alice', edad: 25 };\nconsole.log(persona.nombre);  // Salida: Alice\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "error_handling",
+      "patterns": ["¿Cómo manejar errores en Python?", "Explica try-catch en JavaScript", "Ejemplos de manejo de excepciones en Python", "¿Cómo manejar errores en JavaScript?"],
+      "responses": [
+        "En Python, los errores se pueden manejar usando `try` y `except`. Ejemplo:\n```python\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('No se puede dividir entre cero')\n```",
+        "En JavaScript, los errores se pueden manejar usando `try` y `catch`. Ejemplo:\n```javascript\ntry {\n  let x = 1 / 0;\n} catch (error) {\n  console.log('No se puede dividir entre cero');\n}\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "advanced_topics",
+      "patterns": ["¿Qué es async en JavaScript?", "Explica las clases en Python", "¿Cómo usar promesas en JavaScript?", "Ejemplos de decoradores en Python"],
+      "responses": [
+        "En JavaScript, `async` permite la ejecución de código asincrónico. Ejemplo:\n```javascript\nasync function obtenerDatos() {\n  let respuesta = await fetch('https://api.example.com/data');\n  let datos = await respuesta.json();\n  console.log(datos);\n}\nobtenerDatos();\n```",
+        "En Python, las clases se usan para la programación orientada a objetos. Ejemplo:\n```python\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n\npersona = Persona('Alice', 25)\nprint(persona.nombre)  # Salida: Alice\n```"
       ],
       "context": [""]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Adiós", "Chao", "Nos vemos", "Hablamos pronto"],
-      "responses": ["¡Adiós! ¡Sigue aprendiendo JavaScript y Python!", "¡Chao! No olvides practicar programación.", "¡Nos vemos! ¡Feliz programación!"],
+      "patterns": ["Adiós", "Nos vemos", "Hasta luego", "Gracias, adiós", "Cuídate", "Hablamos pronto"],
+      "responses": ["¡Adiós! Sigue aprendiendo JavaScript y Python.", "¡Nos vemos! No olvides practicar programación.", "¡Hasta luego! ¡Feliz programación!"],
       "context": [""]
     }
   ]

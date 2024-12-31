@@ -1,62 +1,93 @@
 {
-    "intents": [
-      {
-        "tag": "greeting",
-        "patterns": ["Hello", "Hi", "Hey", "Hola", "Good morning", "Good evening"],
-        "responses": ["Hello! Let's talk about JavaScript and Python.", "Hi there! What do you want to know about programming?", "Hey! How can I assist you with JavaScript or Python?"],
-        "context": [""]
-      },
-      {
-        "tag": "javascript_basics",
-        "patterns": ["What is JavaScript?", "Tell me about JavaScript", "What can I do with JavaScript?", "Uses of JavaScript"],
-        "responses": [
-          "JavaScript is a versatile programming language mainly used for web development. It allows you to create interactive elements on websites.",
-          "JavaScript is often used to develop dynamic and interactive web applications. It can also be used for backend development with Node.js."
-        ],
-        "context": [""]
-      },
-      {
-        "tag": "python_basics",
-        "patterns": ["What is Python?", "Tell me about Python", "What can I do with Python?", "Uses of Python"],
-        "responses": [
-          "Python is a high-level, versatile programming language known for its simplicity and readability. It's used in web development, data science, AI, and more.",
-          "Python is widely used in fields like machine learning, automation, and data analysis due to its extensive libraries and frameworks."
-        ],
-        "context": [""]
-      },
-      {
-        "tag": "python_vs_javascript",
-        "patterns": ["Which is better, Python or JavaScript?", "Python vs JavaScript", "Should I learn Python or JavaScript?"],
-        "responses": [
-          "It depends on your goals! Python is great for data science, AI, and backend development, while JavaScript is essential for web development.",
-          "Both are valuable skills. Learn Python for simplicity and versatility; learn JavaScript for web-focused development."
-        ],
-        "context": [""]
-      },
-      {
-        "tag": "learn_javascript",
-        "patterns": ["How do I learn JavaScript?", "Best way to learn JavaScript", "Resources for learning JavaScript"],
-        "responses": [
-          "Start with online platforms like FreeCodeCamp or Codecademy. Practice regularly by building small projects.",
-          "Learn JavaScript by exploring tutorials on MDN Web Docs and experimenting with code on platforms like CodePen or JSFiddle."
-        ],
-        "context": [""]
-      },
-      {
-        "tag": "learn_python",
-        "patterns": ["How do I learn Python?", "Best way to learn Python", "Resources for learning Python"],
-        "responses": [
-          "You can start learning Python through resources like Python.org, Codecademy, or books like 'Automate the Boring Stuff with Python'.",
-          "Practice Python by solving problems on platforms like LeetCode or Kaggle, and experiment with libraries like NumPy and pandas."
-        ],
-        "context": [""]
-      },
-      {
-        "tag": "goodbye",
-        "patterns": ["Goodbye", "Bye", "See you later", "Talk to you soon"],
-        "responses": ["Goodbye! Keep learning JavaScript and Python!", "Bye! Don't forget to practice coding.", "See you! Happy programming!"],
-        "context": [""]
-      }
-    ]
-  }
-  
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hello", "Hi", "Hey", "Hola", "Good morning", "Good evening", "What's up?", "How are you?"],
+      "responses": ["Hello! Let's talk about JavaScript and Python.", "Hi there! What do you want to know about programming?", "Hey! How can I assist you with JavaScript or Python?"],
+      "context": [""]
+    },
+    {
+      "tag": "javascript_basics",
+      "patterns": ["What is JavaScript?", "Tell me about JavaScript", "What can I do with JavaScript?", "Uses of JavaScript", "How is JavaScript used?", "Examples of JavaScript"],
+      "responses": [
+        "JavaScript is a versatile programming language mainly used for web development. It allows you to create interactive elements on websites.",
+        "JavaScript is often used to develop dynamic and interactive web applications. It can also be used for backend development with Node.js.",
+        "Here's a simple example of JavaScript code:\n```javascript\nconsole.log('Hello, JavaScript!');\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "python_basics",
+      "patterns": ["What is Python?", "Tell me about Python", "What can I do with Python?", "Uses of Python", "How is Python used?", "Examples of Python"],
+      "responses": [
+        "Python is a high-level, versatile programming language known for its simplicity and readability. It's used in web development, data science, AI, and more.",
+        "Python is widely used in fields like machine learning, automation, and data analysis due to its extensive libraries and frameworks.",
+        "Here's a simple example of Python code:\n```python\nprint('Hello, Python!')\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "conditionals",
+      "patterns": ["What are conditionals in Python?", "Explain conditionals in JavaScript", "Examples of if-else in Python", "How to write an if statement in JavaScript?"],
+      "responses": [
+        "In Python, conditionals are written using `if`, `elif`, and `else` statements. Here's an example:\n```python\nx = 10\nif x > 5:\n    print('x is greater than 5')\nelif x == 5:\n    print('x is equal to 5')\nelse:\n    print('x is less than 5')\n```",
+        "In JavaScript, conditionals are written using `if`, `else if`, and `else` statements. Here's an example:\n```javascript\nlet x = 10;\nif (x > 5) {\n  console.log('x is greater than 5');\n} else if (x === 5) {\n  console.log('x is equal to 5');\n} else {\n  console.log('x is less than 5');\n}\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "loops",
+      "patterns": ["How to write loops in Python?", "Explain loops in JavaScript", "Examples of for loops in Python", "How to use while loop in JavaScript?"],
+      "responses": [
+        "In Python, you can use `for` and `while` loops. Here's an example of a `for` loop:\n```python\nfor i in range(5):\n    print(i)\n```\nAnd here's an example of a `while` loop:\n```python\nx = 0\nwhile x < 5:\n    print(x)\n    x += 1\n```",
+        "In JavaScript, you can use `for`, `while`, and `do-while` loops. Here's an example of a `for` loop:\n```javascript\nfor (let i = 0; i < 5; i++) {\n  console.log(i);\n}\n```\nAnd here's an example of a `while` loop:\n```javascript\nlet x = 0;\nwhile (x < 5) {\n  console.log(x);\n  x++;\n}\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "functions",
+      "patterns": ["How to write a function in Python?", "Explain functions in JavaScript", "Examples of functions in Python", "How to use functions in JavaScript?"],
+      "responses": [
+        "In Python, you define functions using the `def` keyword. Here's an example:\n```python\ndef greet(name):\n    return f'Hello, {name}!'\nprint(greet('World'))\n```",
+        "In JavaScript, you define functions using the `function` keyword or arrow syntax. Here's an example:\n```javascript\nfunction greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('World'));\n```",
+        "Using arrow functions in JavaScript:\n```javascript\nconst greet = (name) => `Hello, ${name}!`;\nconsole.log(greet('World'));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "data_structures",
+      "patterns": ["Explain lists in Python", "What are arrays in JavaScript?", "How to use dictionaries in Python?", "Examples of objects in JavaScript"],
+      "responses": [
+        "In Python, lists are used to store multiple items. Here's an example:\n```python\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits[0])  # Output: apple\n```",
+        "In JavaScript, arrays are used to store multiple items. Here's an example:\n```javascript\nlet fruits = ['apple', 'banana', 'cherry'];\nconsole.log(fruits[0]);  // Output: apple\n```",
+        "In Python, dictionaries store key-value pairs. Example:\n```python\nperson = {'name': 'Alice', 'age': 25}\nprint(person['name'])  # Output: Alice\n```",
+        "In JavaScript, objects store key-value pairs. Example:\n```javascript\nlet person = { name: 'Alice', age: 25 };\nconsole.log(person.name);  // Output: Alice\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "error_handling",
+      "patterns": ["How to handle errors in Python?", "Explain try-catch in JavaScript", "Examples of exception handling in Python", "How to use error handling in JavaScript?"],
+      "responses": [
+        "In Python, errors can be handled using `try` and `except`. Here's an example:\n```python\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')\n```",
+        "In JavaScript, errors can be handled using `try` and `catch`. Here's an example:\n```javascript\ntry {\n  let x = 1 / 0;\n} catch (error) {\n  console.log('Cannot divide by zero');\n}\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "advanced_topics",
+      "patterns": ["What is async in JavaScript?", "Explain classes in Python", "How to use promises in JavaScript?", "Examples of decorators in Python"],
+      "responses": [
+        "In JavaScript, `async` allows asynchronous code execution. Example:\n```javascript\nasync function fetchData() {\n  let response = await fetch('https://api.example.com/data');\n  let data = await response.json();\n  console.log(data);\n}\nfetchData();\n```",
+        "In Python, classes are used for object-oriented programming. Example:\n```python\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nperson = Person('Alice', 25)\nprint(person.name)  # Output: Alice\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Goodbye", "Bye", "See you later", "Talk to you soon", "Thanks, goodbye", "Catch you later"],
+      "responses": ["Goodbye! Keep learning JavaScript and Python!", "Bye! Don't forget to practice coding.", "See you! Happy programming!"],
+      "context": [""]
+    }
+  ]
+}
