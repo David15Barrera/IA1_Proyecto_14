@@ -1,68 +1,60 @@
-from googletrans import Translator
 import nltk
 from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
-import speech_recognition as s
-
-import tensorflow as tf
 from keras.models import load_model
-
-model = load_model('chatbot_model.h5')
-from google_trans_new import google_translator
-from googletrans import Translator
-translator = google_translator()
-translator = Translator()
 import json
 import random
-intents = json.loads(open('faqdata.json', encoding='utf-8').read())
-words = pickle.load(open('words.pkl','rb'))
-classes = pickle.load(open('classes.pkl','rb'))
 
+lemmatizer = WordNetLemmatizer()
 
-def clean_up_sentence(sentence):
-    sentence_words = nltk.word_tokenize(sentence)
-    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
-    return sentence_words
+# Singleton para cargar el modelo y datos una sola vez
+class ChatbotModel:
+    def __init__(self):
+        self.model = load_model('chatbot_model.h5')
+        # Cargar ambos JSONs
+        with open('faqdataEn.json', encoding='utf-8') as file_es:
+            self.intents_es = json.load(file_es)
+        with open('faqdata.json', encoding='utf-8') as file_en:
+            self.intents_en = json.load(file_en)
+        self.words = pickle.load(open('words.pkl', 'rb'))
+        self.classes = pickle.load(open('classes.pkl', 'rb'))
 
-def bow(sentence, words, show_details=True):
-    sentence_words = clean_up_sentence(sentence)
-    bag = [0] * len(words)
-    for s in sentence_words:
-        for i, w in enumerate(words):
-            if w == s:
-                bag[i] = 1
-                if show_details:
-                    print(f"found in bag: {w}")
-    return np.array(bag)
+    def predict_class(self, sentence):
+        p = self.bow(sentence)
+        res = self.model.predict(np.array([p]))[0]
+        ERROR_THRESHOLD = 0.4
+        results = [{"intent": self.classes[i], "probability": prob} for i, prob in enumerate(res) if prob > ERROR_THRESHOLD]
+        return sorted(results, key=lambda x: x['probability'], reverse=True)
 
-def predict_class(sentence, model):
-    p = bow(sentence, words, show_details=False)
-    res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.25
-    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-    results.sort(key=lambda x: x[1], reverse=True)
-    return [{"intent": classes[r[0]], "probability": str(r[1])} for r in results]
+    def bow(self, sentence):
+        sentence_words = self.clean_up_sentence(sentence)
+        bag = [1 if word in sentence_words else 0 for word in self.words]
+        return np.array(bag)
 
-def getResponse(ints, intents_json):
-    tag = ints[0]['intent']
-    for i in intents_json['intents']:
-        if i['tag'] == tag:
-            return random.choice(i['responses'])
-    return "I don't understand."
+    def clean_up_sentence(self, sentence):
+        sentence_words = nltk.word_tokenize(sentence)
+        return {lemmatizer.lemmatize(word.lower()) for word in sentence_words}
+
+    def detect_language(self, sentence):
+        # Detección básica del idioma
+        spanish_keywords = ["qué", "es", "cómo", "dónde", "por qué", "cuándo", "cuál", "hola"]
+        if any(word.lower() in sentence.lower() for word in spanish_keywords):
+            return "es"
+        else:
+            return "en"
+
+chatbot = ChatbotModel()
 
 def chatbot_response(msg):
-    detected_lang = translator.detect(msg).lang
-    print(f"Detected language: {detected_lang}")
+    language = chatbot.detect_language(msg)
+    intents = chatbot.intents_es if language == "es" else chatbot.intents_en
+
+    ints = chatbot.predict_class(msg)
+    if not ints:
+        return "Lo siento, no entiendo." if language == "es" else "Sorry, I don't understand."
     
-    if detected_lang != 'en':  # Translate to English for processing
-        msg = translator.translate(msg, dest='en').text
-    
-    ints = predict_class(msg, model)
-    res = getResponse(ints, intents)
-    
-    if detected_lang != 'en':  # Translate response back to original language
-        res = translator.translate(res, dest=detected_lang).text
-    
-    return res
+    tag = ints[0]['intent']
+    for intent in intents['intents']:
+        if intent['tag'] == tag:
+            return random.choice(intent['responses'])

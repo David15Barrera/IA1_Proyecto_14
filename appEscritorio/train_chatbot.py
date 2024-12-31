@@ -1,21 +1,29 @@
 import json
 import pickle
 import numpy as np
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
-
 import nltk
 from nltk.stem import WordNetLemmatizer
 import random
+
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
 nltk.download('wordnet')
 
-# Cargar dataset
-with open('faqdata.json', 'r') as file:
-    intents = json.load(file)
+# Función para cargar y combinar los datasets en un solo archivo
+def load_intents(file_paths):
+    combined_intents = {"intents": []}
+    for file_path in file_paths:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            combined_intents["intents"].extend(data["intents"])
+    return combined_intents
+
+# Cargar y combinar los datasets en español e inglés
+file_paths = ['faqdata.json', 'faqdataEn.json']
+intents = load_intents(file_paths)
 
 words = []
 classes = []
@@ -55,7 +63,7 @@ for doc in documents:
     training.append([bag, output_row])
 
 random.shuffle(training)
-training = np.array(training, dtype=object)  # Corregido para evitar errores
+training = np.array(training, dtype=object)
 
 train_x = np.array([item[0] for item in training])
 train_y = np.array([item[1] for item in training])
@@ -73,7 +81,7 @@ sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # Entrenar modelo
-model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+model.fit(np.array(train_x), np.array(train_y), epochs=100, batch_size=8, verbose=1)
 model.save('chatbot_model.h5')
 
 print("Modelo creado y guardado correctamente.")
