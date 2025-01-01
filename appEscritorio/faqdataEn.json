@@ -1,13 +1,13 @@
 {
   "intents": [
     {
-      "tag": "greeting",
+      "tag": "saludo",
       "patterns": ["Hola", "Hola, ¿qué tal?", "Buenos días", "Buenas tardes", "¿Cómo estás?", "¿Qué tal?", "¿Cómo te va?"],
       "responses": ["¡Hola! Hablemos de JavaScript y Python.", "¡Hola! ¿Qué te gustaría saber sobre programación?", "¡Hola! ¿En qué puedo ayudarte con JavaScript o Python?"],
       "context": [""]
     },
     {
-      "tag": "javascript_basics",
+      "tag": "basicos_javascript",
       "patterns": ["¿Qué es JavaScript?", "Háblame de JavaScript", "¿Qué puedo hacer con JavaScript?", "Usos de JavaScript", "¿Cómo se usa JavaScript?", "Ejemplos de JavaScript"],
       "responses": [
         "JavaScript es un lenguaje de programación versátil que se utiliza principalmente para el desarrollo web. Permite crear elementos interactivos en los sitios web.",
@@ -17,7 +17,7 @@
       "context": [""]
     },
     {
-      "tag": "python_basics",
+      "tag": "basicos_python",
       "patterns": ["¿Qué es Python?", "Háblame de Python", "¿Qué puedo hacer con Python?", "Usos de Python", "¿Cómo se usa Python?", "Ejemplos de Python"],
       "responses": [
         "Python es un lenguaje de programación de alto nivel, versátil, conocido por su simplicidad y legibilidad. Se usa en desarrollo web, ciencia de datos, IA y más.",
@@ -27,7 +27,7 @@
       "context": [""]
     },
     {
-      "tag": "conditionals",
+      "tag": "condicionales",
       "patterns": ["¿Qué son los condicionales en Python?", "Explica los condicionales en JavaScript", "Ejemplos de if-else en Python", "¿Cómo escribir un if en JavaScript?"],
       "responses": [
         "En Python, los condicionales se escriben usando las palabras clave `if`, `elif` y `else`. Aquí tienes un ejemplo:\n```python\nx = 10\nif x > 5:\n    print('x es mayor que 5')\nelif x == 5:\n    print('x es igual a 5')\nelse:\n    print('x es menor que 5')\n```",
@@ -36,7 +36,7 @@
       "context": [""]
     },
     {
-      "tag": "loops",
+      "tag": "bucles",
       "patterns": ["¿Cómo escribir bucles en Python?", "Explica los bucles en JavaScript", "Ejemplos de for en Python", "¿Cómo usar while en JavaScript?"],
       "responses": [
         "En Python, puedes usar bucles `for` y `while`. Aquí tienes un ejemplo de un bucle `for`:\n```python\nfor i in range(5):\n    print(i)\n```\nY aquí tienes un ejemplo de un bucle `while`:\n```python\nx = 0\nwhile x < 5:\n    print(x)\n    x += 1\n```",
@@ -45,7 +45,7 @@
       "context": [""]
     },
     {
-      "tag": "functions",
+      "tag": "funciones",
       "patterns": ["¿Cómo escribir una función en Python?", "Explica las funciones en JavaScript", "Ejemplos de funciones en Python", "¿Cómo usar funciones en JavaScript?"],
       "responses": [
         "En Python, defines funciones usando la palabra clave `def`. Aquí tienes un ejemplo:\n```python\ndef saludar(nombre):\n    return f'¡Hola, {nombre}!'\nprint(saludar('Mundo'))\n```",
@@ -55,7 +55,7 @@
       "context": [""]
     },
     {
-      "tag": "data_structures",
+      "tag": "estructuras_de_datos",
       "patterns": ["Explica listas en Python", "¿Qué son los arrays en JavaScript?", "¿Cómo usar diccionarios en Python?", "Ejemplos de objetos en JavaScript"],
       "responses": [
         "En Python, las listas se utilizan para almacenar múltiples elementos. Ejemplo:\n```python\nfrutas = ['manzana', 'banana', 'cereza']\nprint(frutas[0])  # Salida: manzana\n```",
@@ -66,7 +66,7 @@
       "context": [""]
     },
     {
-      "tag": "error_handling",
+      "tag": "manejo_de_errores",
       "patterns": ["¿Cómo manejar errores en Python?", "Explica try-catch en JavaScript", "Ejemplos de manejo de excepciones en Python", "¿Cómo manejar errores en JavaScript?"],
       "responses": [
         "En Python, los errores se pueden manejar usando `try` y `except`. Ejemplo:\n```python\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('No se puede dividir entre cero')\n```",
@@ -75,7 +75,7 @@
       "context": [""]
     },
     {
-      "tag": "advanced_topics",
+      "tag": "temas_avanzados",
       "patterns": ["¿Qué es async en JavaScript?", "Explica las clases en Python", "¿Cómo usar promesas en JavaScript?", "Ejemplos de decoradores en Python"],
       "responses": [
         "En JavaScript, `async` permite la ejecución de código asincrónico. Ejemplo:\n```javascript\nasync function obtenerDatos() {\n  let respuesta = await fetch('https://api.example.com/data');\n  let datos = await respuesta.json();\n  console.log(datos);\n}\nobtenerDatos();\n```",
@@ -84,7 +84,7 @@
       "context": [""]
     },
     {
-      "tag": "goodbye",
+      "tag": "despedida",
       "patterns": ["Adiós", "Nos vemos", "Hasta luego", "Gracias, adiós", "Cuídate", "Hablamos pronto"],
       "responses": ["¡Adiós! Sigue aprendiendo JavaScript y Python.", "¡Nos vemos! No olvides practicar programación.", "¡Hasta luego! ¡Feliz programación!"],
       "context": [""]
