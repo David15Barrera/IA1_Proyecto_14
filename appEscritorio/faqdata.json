@@ -7,6 +7,23 @@
       "context": [""]
     },
     {
+      "tag": "capabilities",
+      "patterns": [
+        "What can you do?",
+        "What are your functions?",
+        "What services do you offer?",
+        "How can you help me?",
+        "What are your skills?"
+      ],
+      "responses": [
+        "I can answer questions about programming in Python and JavaScript, recommend music, discuss music genres and artists, or help you with basic programming concepts. Is there something specific you'd like to know?",
+        "I can explain topics related to Python and JavaScript, recommend songs and musical artists, and answer questions about algorithms and data structures. How can I assist you?",
+        "My skills include answering questions about development in Python or JavaScript, recommending music based on your taste, and explaining basic programming concepts. Is there anything in particular you'd like to learn?",
+        "I can assist you with programming (Python, JavaScript), recommend music (artists, genres, songs), or answer technical questions. What do you need help with?"
+      ],
+      "context": [""]
+    },
+    {
       "tag": "javascript_basics",
       "patterns": ["What is JavaScript?", "Tell me about JavaScript", "What can I do with JavaScript?", "Uses of JavaScript", "How is JavaScript used?", "Examples of JavaScript"],
       "responses": [

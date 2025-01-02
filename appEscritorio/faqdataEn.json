@@ -7,6 +7,23 @@
       "context": [""]
     },
     {
+      "tag": "capacidades",
+      "patterns": [
+        "¿Qué puedes hacer?",
+        "¿Qué funciones tienes?",
+        "¿Qué servicios ofreces?",
+        "¿Cómo me puedes ayudar?",
+        "¿Qué habilidades tienes?"
+      ],
+      "responses": [
+        "Puedo responder preguntas sobre programación en Python y JavaScript, recomendarte música, hablar sobre géneros musicales y artistas, o ayudarte con conceptos básicos de programación. ¿Te interesa algo específico?",
+        "Soy capaz de explicarte temas relacionados con Python y JavaScript, recomendar canciones y artistas musicales, y responder preguntas sobre algoritmos y estructuras de datos. ¿En qué puedo ayudarte?",
+        "Mis habilidades incluyen responder preguntas sobre desarrollo en Python o JavaScript, recomendarte música según tus gustos, y explicarte conceptos básicos de programación. ¿Quieres aprender algo en particular?",
+        "Puedo ayudarte con programación (Python, JavaScript), recomendarte música (artistas, géneros, canciones), o responder preguntas técnicas. ¿Qué necesitas?"
+      ],
+      "context": [""]
+    },
+    {
       "tag": "basicos_javascript",
       "patterns": ["¿Qué es JavaScript?", "Háblame de JavaScript", "¿Qué puedo hacer con JavaScript?", "Usos de JavaScript", "¿Cómo se usa JavaScript?", "Ejemplos de JavaScript"],
       "responses": [
@@ -220,7 +237,7 @@
   },
   {
     "tag": "recomendacion_musica_general",
-    "patterns": ["¿Qué música me recomiendas escuchar?", "Recomiéndame música", "¿Qué canciones escuchar?"],
+    "patterns": ["¿Qué música me recomiendas escuchar?","¿Qué música me recomiendas?", "Recomiéndame música", "¿Qué canciones escuchar?"],
     "responses": [
       "Depende de lo que te guste. Si prefieres algo clásico, prueba el jazz con Miles Davis o Ella Fitzgerald. Si te gusta el rock, escucha Queen o Nirvana. Para algo más moderno, prueba el pop con Michael Jackson o Madonna. ¿Quieres recomendaciones más específicas?"
     ],
