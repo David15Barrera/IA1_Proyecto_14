@@ -7,7 +7,6 @@ from tensorflow.keras.optimizers import SGD
 import nltk
 from nltk.stem import WordNetLemmatizer
 import random
-import matplotlib.pyplot as plt
 from collections import Counter
 
 lemmatizer = WordNetLemmatizer()
@@ -103,15 +102,4 @@ history = model.fit(
 model.save('chatbot_model.h5')
 print("Modelo creado y guardado correctamente.")
 
-# Graficar métricas de entrenamiento
-plt.plot(history.history['accuracy'], label='Precisión de entrenamiento')
-plt.plot(history.history['val_accuracy'], label='Precisión de validación')
-plt.legend()
-plt.title('Precisión')
-plt.show()
 
-plt.plot(history.history['loss'], label='Pérdida de entrenamiento')
-plt.plot(history.history['val_loss'], label='Pérdida de validación')
-plt.legend()
-plt.title('Pérdida')
-plt.show()

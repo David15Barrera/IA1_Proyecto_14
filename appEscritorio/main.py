@@ -44,8 +44,8 @@ root.title("Emely Chat Bot IA1-EDV")
 root.configure(bg="#232529")  # Fondo oscuro similar
 
 # Tamaño y posición de la ventana
-window_width = 1000
-window_height = 600
+window_width = 1200
+window_height = 800
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x_centrado = (screen_width - window_width) // 2

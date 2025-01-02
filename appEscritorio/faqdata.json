@@ -217,6 +217,158 @@
         "Here is the code to find the minimum number in JavaScript:\n```javascript\n// Find the minimum number in an array\nfunction findMinimum(numbers) {\n  return Math.min(...numbers);\n}\nconst numbers = [3, 5, 7, 9];\nconsole.log(findMinimum(numbers));\n```"
       ],
       "context": [""]
+    },
+    {
+      "tag": "general_music_recommendation",
+      "patterns": ["What music do you recommend?", "Recommend me some music", "What songs should I listen to?"],
+      "responses": [
+        "It depends on what you like. If you prefer something classic, try jazz with Miles Davis or Ella Fitzgerald. If you enjoy rock, listen to Queen or Nirvana. For something more modern, try pop with Michael Jackson or Madonna. Would you like more specific recommendations?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "music_definition",
+      "patterns": ["What is music?", "Definition of music", "What does music mean?"],
+      "responses": [
+        "Music is the art of organizing sounds in time to express ideas, emotions, and culture. There are many genres like rock, pop, jazz, and more. Would you like to explore a genre?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "music_genres",
+      "patterns": ["Tell me about music genres", "Recommend music genres", "What genres exist?"],
+      "responses": [
+        "Some popular genres are: Rock, Pop, Jazz, Hip-Hop, and Classical. Are you interested in learning more about any of them?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "rock_definition",
+      "patterns": ["What is rock?", "Definition of rock", "Tell me about rock"],
+      "responses": [
+        "Rock is a musical genre that combines elements of blues, country, and R&B. Notable artists include Queen, Nirvana, The Rolling Stones, and Led Zeppelin. Would you like to know more about any of these artists?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "pop_definition",
+      "patterns": ["What is pop?", "Definition of pop", "Tell me about pop"],
+      "responses": [
+        "Pop is a musical genre focused on catchy and commercial songs. Notable artists include Michael Jackson, Madonna, and Britney Spears. Would you like to know more about any of these artists?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "jazz_definition",
+      "patterns": ["What is jazz?", "Definition of jazz", "Tell me about jazz"],
+      "responses": [
+        "Jazz is a genre characterized by improvisation and complex rhythms. Notable artists include Miles Davis, Louis Armstrong, and Ella Fitzgerald. Would you like to know more about any of these artists?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "artist_queen",
+      "patterns": ["Tell me about Queen", "Who is Queen?", "Information about Queen"],
+      "responses": [
+        "Queen is a British rock band formed in 1970. Freddie Mercury is their lead vocalist. Famous songs include 'Bohemian Rhapsody', 'We Will Rock You', and 'Don't Stop Me Now'."
+      ],
+      "context": ["rock_definition"]
+    },
+    {
+      "tag": "artist_nirvana",
+      "patterns": ["Tell me about Nirvana", "Who is Nirvana?", "Information about Nirvana"],
+      "responses": [
+        "Nirvana is an American grunge band formed in 1987, led by Kurt Cobain. Iconic songs include 'Smells Like Teen Spirit', 'Come As You Are', and 'Heart-Shaped Box'."
+      ],
+      "context": ["rock_definition"]
+    },
+    {
+      "tag": "artist_led_zeppelin",
+      "patterns": ["Tell me about Led Zeppelin", "Who are Led Zeppelin?", "Information about Led Zeppelin"],
+      "responses": [
+        "Led Zeppelin is a British rock band formed in 1968. They are known for their influence on rock and hard rock. Notable songs include 'Stairway to Heaven', 'Whole Lotta Love', and 'Kashmir'. Would you like song recommendations?"
+      ],
+      "context": ["rock_definition"]
+    },
+    {
+      "tag": "artist_the_rolling_stones",
+      "patterns": ["Tell me about The Rolling Stones", "Who are The Rolling Stones?", "Information about The Rolling Stones"],
+      "responses": [
+        "The Rolling Stones is a British rock band formed in 1962. They are known for their contributions to rock and roll. Notable songs include 'Paint It Black', 'Angie', and 'Sympathy for the Devil'."
+      ],
+      "context": ["rock_definition"]
+    },
+    {
+      "tag": "artist_michael_jackson",
+      "patterns": ["Tell me about Michael Jackson", "Who is Michael Jackson?", "Information about Michael Jackson"],
+      "responses": [
+        "Michael Jackson, known as the King of Pop, is one of the most influential artists of all time. Notable songs include 'Thriller', 'Billie Jean', and 'Beat It'. Would you like song recommendations?"
+      ],
+      "context": ["pop_definition"]
+    },
+    {
+      "tag": "artist_madonna",
+      "patterns": ["Tell me about Madonna", "Who is Madonna?", "Information about Madonna"],
+      "responses": [
+        "Madonna is an American singer and actress known as the Queen of Pop. Popular songs include 'Like a Virgin', 'Material Girl', and 'Vogue'."
+      ],
+      "context": ["pop_definition"]
+    },
+    {
+      "tag": "artist_miles_davis",
+      "patterns": ["Tell me about Miles Davis", "Who is Miles Davis?", "Information about Miles Davis"],
+      "responses": [
+        "Miles Davis is an American trumpeter and composer, one of the most influential figures in jazz history. Notable albums include 'Kind of Blue' and 'Bitches Brew'. Would you like to learn more about any of his works?"
+      ],
+      "context": ["jazz_definition"]
+    },
+    {
+      "tag": "recommendation_michael_jackson",
+      "patterns": ["Recommend me Michael Jackson songs", "Popular Michael Jackson songs", "What songs should I listen to by Michael Jackson?"],
+      "responses": [
+        "I recommend these Michael Jackson songs: 'Thriller', 'Billie Jean', 'Beat It', and 'Smooth Criminal'. Would you like to know more about any of these?"
+      ],
+      "context": ["artist_michael_jackson"]
+    },
+    {
+      "tag": "recommendation_led_zeppelin",
+      "patterns": ["Recommend me Led Zeppelin songs", "Popular Led Zeppelin songs", "What songs should I listen to by Led Zeppelin?"],
+      "responses": [
+        "I recommend these Led Zeppelin songs: 'Stairway to Heaven', 'Whole Lotta Love', 'Kashmir', and 'Immigrant Song'. Would you like to know more about any of these?"
+      ],
+      "context": ["artist_led_zeppelin"]
+    },
+    {
+      "tag": "artist_louis_armstrong",
+      "patterns": ["Tell me about Louis Armstrong", "Who is Louis Armstrong?", "Information about Louis Armstrong"],
+      "responses": [
+        "Louis Armstrong, also known as 'Satchmo', was an American jazz trumpeter, composer, and singer. He is considered one of the most influential figures in jazz history. Notable songs include 'What a Wonderful World', 'La Vie en Rose', and 'When the Saints Go Marching In'."
+      ],
+      "context": ["jazz_definition"]
+    },
+    {
+      "tag": "artist_ella_fitzgerald",
+      "patterns": ["Tell me about Ella Fitzgerald", "Who is Ella Fitzgerald?", "Information about Ella Fitzgerald"],
+      "responses": [
+        "Ella Fitzgerald, known as 'The First Lady of Song', was an American jazz singer famous for her vocal range and clarity. Notable songs include 'Summertime', 'Cheek to Cheek', and 'Dream a Little Dream of Me'."
+      ],
+      "context": ["jazz_definition"]
+    },
+    {
+      "tag": "recommendation_louis_armstrong",
+      "patterns": ["Recommend me Louis Armstrong songs", "Popular Louis Armstrong songs", "What songs should I listen to by Louis Armstrong?"],
+      "responses": [
+        "I recommend these Louis Armstrong songs: 'What a Wonderful World', 'La Vie en Rose', 'When the Saints Go Marching In', and 'Hello, Dolly!'."
+      ],
+      "context": ["artist_louis_armstrong"]
+    },
+    {
+      "tag": "recommendation_ella_fitzgerald",
+      "patterns": ["Recommend me Ella Fitzgerald songs", "Popular Ella Fitzgerald songs", "What songs should I listen to by Ella Fitzgerald?"],
+      "responses": [
+        "I recommend these Ella Fitzgerald songs: 'Summertime', 'Cheek to Cheek', 'Dream a Little Dream of Me', and 'Mack the Knife'."
+      ],
+      "context": ["artist_ella_fitzgerald"]
     }
   ]
 }

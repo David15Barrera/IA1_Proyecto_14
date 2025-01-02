@@ -217,6 +217,158 @@
       "Aquí tienes el código para encontrar el número mínimo en JavaScript:\n```javascript\n// Encontrar el número mínimo en un arreglo\nfunction encontrarMinimo(numeros) {\n  return Math.min(...numeros);\n}\nconst numeros = [3, 5, 7, 9];\nconsole.log(encontrarMinimo(numeros));\n```"
     ],
     "context": [""]
-  }
+  },
+  {
+    "tag": "recomendacion_musica_general",
+    "patterns": ["¿Qué música me recomiendas escuchar?", "Recomiéndame música", "¿Qué canciones escuchar?"],
+    "responses": [
+      "Depende de lo que te guste. Si prefieres algo clásico, prueba el jazz con Miles Davis o Ella Fitzgerald. Si te gusta el rock, escucha Queen o Nirvana. Para algo más moderno, prueba el pop con Michael Jackson o Madonna. ¿Quieres recomendaciones más específicas?"
+    ],
+    "context": [""]
+  },
+  {
+      "tag": "definicion_musica",
+      "patterns": ["¿Qué es la música?", "Definición de música", "¿Qué significa música?"],
+      "responses": [
+        "La música es el arte de organizar sonidos en el tiempo para expresar ideas, emociones y cultura. Existen muchos géneros como rock, pop, jazz y más. ¿Te gustaría explorar algún género?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "generos_musicales",
+      "patterns": ["Háblame de los géneros musicales", "Recomiéndame géneros musicales", "¿Qué géneros existen?"],
+      "responses": [
+        "Algunos géneros populares son: Rock, Pop, Jazz, Hip-Hop y Clásica. ¿Te interesa saber más sobre alguno en particular?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "definicion_rock",
+      "patterns": ["¿Qué es el rock?", "Definición de rock", "Háblame del rock"],
+      "responses": [
+        "El rock es un género musical que combina elementos de blues, country y R&B. Artistas destacados incluyen Queen, Nirvana, The Rolling Stones y Led Zeppelin. ¿Quieres saber más sobre algún artista?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "definicion_pop",
+      "patterns": ["¿Qué es el pop?", "Definición de pop", "Háblame del pop"],
+      "responses": [
+        "El pop es un género musical orientado a canciones pegadizas y comerciales. Artistas destacados incluyen Michael Jackson, Madonna y Britney Spears. ¿Quieres saber más sobre algún artista?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "definicion_jazz",
+      "patterns": ["¿Qué es el jazz?", "Definición de jazz", "Háblame del jazz"],
+      "responses": [
+        "El jazz es un género caracterizado por la improvisación y ritmos complejos. Artistas destacados incluyen Miles Davis, Louis Armstrong y Ella Fitzgerald. ¿Quieres saber más sobre algún artista?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "artista_queen",
+      "patterns": ["Háblame de Queen", "¿Quiénes son Queen?", "Información sobre Queen"],
+      "responses": [
+        "Queen es una banda británica de rock formada en 1970. Freddie Mercury es su vocalista principal. Canciones famosas incluyen 'Bohemian Rhapsody', 'We Will Rock You' y 'Don't Stop Me Now'."
+      ],
+      "context": ["definicion_rock"]
+    },
+    {
+      "tag": "artista_nirvana",
+      "patterns": ["Háblame de Nirvana", "¿Quiénes son Nirvana?", "Información sobre Nirvana"],
+      "responses": [
+        "Nirvana es una banda estadounidense de grunge formada en 1987, liderada por Kurt Cobain. Canciones icónicas incluyen 'Smells Like Teen Spirit', 'Come As You Are' y 'Heart-Shaped Box'."
+      ],
+      "context": ["definicion_rock"]
+    },
+    {
+      "tag": "artista_led_zeppelin",
+      "patterns": ["Háblame de Led Zeppelin", "¿Quiénes son Led Zeppelin?", "Información sobre Led Zeppelin"],
+      "responses": [
+        "Led Zeppelin es una banda británica de rock formada en 1968. Es conocida por su influencia en el rock y el hard rock. Canciones destacadas incluyen 'Stairway to Heaven', 'Whole Lotta Love' y 'Kashmir'. ¿Quieres recomendaciones de canciones?"
+      ],
+      "context": ["definicion_rock"]
+    },
+    {
+      "tag": "artista_the_rolling_stones",
+      "patterns": ["Háblame de The Rolling Stones", "¿Quiénes son The Rolling Stones?", "Información sobre The Rolling Stones"],
+      "responses": [
+        "The Rolling Stones es una banda británica de rock formada en 1962. Es conocida por sus contribuciones al rock and roll. Canciones destacadas incluyen 'Paint It Black', 'Angie' y 'Sympathy for the Devil'."
+      ],
+      "context": ["definicion_rock"]
+    },
+    {
+      "tag": "artista_michael_jackson",
+      "patterns": ["Háblame de Michael Jackson", "¿Quién es Michael Jackson?", "Información sobre Michael Jackson"],
+      "responses": [
+        "Michael Jackson, conocido como el Rey del Pop, es uno de los artistas más influyentes de todos los tiempos. Canciones destacadas incluyen 'Thriller', 'Billie Jean' y 'Beat It'. ¿Quieres recomendaciones de canciones?"
+      ],
+      "context": ["definicion_pop"]
+    },
+    {
+      "tag": "artista_madonna",
+      "patterns": ["Háblame de Madonna", "¿Quién es Madonna?", "Información sobre Madonna"],
+      "responses": [
+        "Madonna es una cantante y actriz estadounidense conocida como la Reina del Pop. Canciones populares incluyen 'Like a Virgin', 'Material Girl' y 'Vogue'."
+      ],
+      "context": ["definicion_pop"]
+    },
+    {
+      "tag": "artista_miles_davis",
+      "patterns": ["Háblame de Miles Davis", "¿Quién es Miles Davis?", "Información sobre Miles Davis"],
+      "responses": [
+        "Miles Davis es un trompetista y compositor estadounidense, una de las figuras más influyentes en la historia del jazz. Álbumes destacados incluyen 'Kind of Blue' y 'Bitches Brew'. ¿Quieres saber más sobre alguna de sus obras?"
+      ],
+      "context": ["definicion_jazz"]
+    },
+    {
+      "tag": "recomendacion_michael_jackson",
+      "patterns": ["Recomiéndame canciones de Michael Jackson", "Canciones populares de Michael Jackson", "¿Qué canciones escuchar de Michael Jackson?"],
+      "responses": [
+        "Te recomiendo estas canciones de Michael Jackson: 'Thriller', 'Billie Jean', 'Beat It' y 'Smooth Criminal'. ¿Te interesa saber más sobre alguna de estas?"
+      ],
+      "context": ["artista_michael_jackson"]
+    },
+    {
+      "tag": "recomendacion_led_zeppelin",
+      "patterns": ["Recomiéndame canciones de Led Zeppelin", "Canciones populares de Led Zeppelin", "¿Qué canciones escuchar de Led Zeppelin?"],
+      "responses": [
+        "Te recomiendo estas canciones de Led Zeppelin: 'Stairway to Heaven', 'Whole Lotta Love', 'Kashmir' y 'Immigrant Song'. ¿Te interesa saber más sobre alguna de estas?"
+      ],
+      "context": ["artista_led_zeppelin"]
+    },
+    {
+      "tag": "artista_louis_armstrong",
+      "patterns": ["Háblame de Louis Armstrong", "¿Quién es Louis Armstrong?", "Información sobre Louis Armstrong"],
+      "responses": [
+        "Louis Armstrong, también conocido como 'Satchmo', fue un trompetista, compositor y cantante estadounidense de jazz. Es considerado una de las figuras más influyentes en la historia del jazz. Canciones destacadas incluyen 'What a Wonderful World', 'La Vie en Rose' y 'When the Saints Go Marching In'."
+      ],
+      "context": ["definicion_jazz"]
+    },
+    {
+      "tag": "artista_ella_fitzgerald",
+      "patterns": ["Háblame de Ella Fitzgerald", "¿Quién es Ella Fitzgerald?", "Información sobre Ella Fitzgerald"],
+      "responses": [
+        "Ella Fitzgerald, conocida como 'La Primera Dama de la Canción', fue una cantante estadounidense de jazz famosa por su rango vocal y claridad. Canciones destacadas incluyen 'Summertime', 'Cheek to Cheek' y 'Dream a Little Dream of Me'."
+      ],
+      "context": ["definicion_jazz"]
+    },
+    {
+      "tag": "recomendacion_louis_armstrong",
+      "patterns": ["Recomiéndame canciones de Louis Armstrong", "Canciones populares de Louis Armstrong", "¿Qué canciones escuchar de Louis Armstrong?"],
+      "responses": [
+        "Te recomiendo estas canciones de Louis Armstrong: 'What a Wonderful World', 'La Vie en Rose', 'When the Saints Go Marching In' y 'Hello, Dolly!'. "
+      ],
+      "context": ["artista_louis_armstrong"]
+    },
+    {
+      "tag": "recomendacion_ella_fitzgerald",
+      "patterns": ["Recomiéndame canciones de Ella Fitzgerald", "Canciones populares de Ella Fitzgerald", "¿Qué canciones escuchar de Ella Fitzgerald?"],
+      "responses": [
+        "Te recomiendo estas canciones de Ella Fitzgerald: 'Summertime', 'Cheek to Cheek', 'Dream a Little Dream of Me' y 'Mack the Knife'."
+      ],
+      "context": ["artista_ella_fitzgerald"]
+    }
   ]
 }

@@ -26,6 +26,7 @@ class ChatbotModel:
         ERROR_THRESHOLD = 0.4
         results = [{"intent": self.classes[i], "probability": prob} for i, prob in enumerate(res) if
                    prob > ERROR_THRESHOLD]
+        print(results)
         return sorted(results, key=lambda x: x['probability'], reverse=True)
 
     def bow(self, sentence):
@@ -39,7 +40,7 @@ class ChatbotModel:
 
     def detect_language(self, sentence):
         # Detección básica del idioma
-        spanish_keywords = ["qué", "es", "cómo", "dónde", "por qué", "cuándo", "cuál", "hola"]
+        spanish_keywords = ["qué", "es", "cómo", "dónde", "por qué", "cuándo", "cuál", "hola", "recomiendame"]
         if any(word.lower() in sentence.lower() for word in spanish_keywords):
             return "es"
         else:
@@ -74,11 +75,12 @@ def chatbot_response(msg):
             print(f"Etiqueta encontrada en intenciones primarias: {tag}")
             return random.choice(intent['responses'])
 
-    # Buscar en las intenciones secundarias por si acso 
+    # Buscar en las intenciones secundarias por si acso
     for intent in intents_secondary['intents']:
         print(f"Comparando {intent['tag']} con {tag}")
         if intent['tag'] == tag:
             print(f"Etiqueta encontrada en intenciones secundarias: {tag}")
+            print(random.choice(intent['responses']))
             return random.choice(intent['responses'])
 
     # Si no se encuentra en ningún conjunto de intenciones
