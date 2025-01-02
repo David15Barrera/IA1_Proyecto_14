@@ -87,6 +87,7 @@ const Chat = ({ messages, setMessages }) => {
     }
   };
 
+
   // Procesar consulta
   const processQuery = async (query) => {
     if (!model) {
@@ -96,17 +97,6 @@ const Chat = ({ messages, setMessages }) => {
     // Normalizar la consulta del usuario
     const normalizedQuery = query.trim().toLowerCase();
 
-    // Coincidencias exactas para preguntas clave
-    const exactMatches = {
-      hola: "¡Hola! ¿En qué puedo ayudarte?",
-      "cómo estás": "Estoy aquí para ayudarte con tus dudas.",
-      "cómo te sientes": "Me siento genial ayudándote con tus consultas.",
-      "eres humano": "No, soy una inteligencia artificial, pero estoy aquí para ayudarte.",
-    };
-
-    if (exactMatches[normalizedQuery]) {
-      return exactMatches[normalizedQuery];
-    }
 
     // Verificar si la consulta es una expresión matemática directa
     if (isMathExpression(normalizedQuery)) {
@@ -126,11 +116,17 @@ const Chat = ({ messages, setMessages }) => {
     const similarities = tf.matMul(queryEmbedding, questionEmbeddings, false, true);
     const bestMatchIndex = similarities.argMax(1).arraySync()[0];
 
+<<<<<<< HEAD:src/components/Chat.jsx
     return faqData[bestMatchIndex]?.answer || "Aun no aprendo sobre lo que quieres saber, pero puedes preuntarme sobre tecnologia, Inteligencia artificial, libros o musica.";
+=======
+    return faqData[bestMatchIndex]?.answer || "Lo siento, Solo puedo ayudarte con consultas relacionadas con Python, Javascript, Libros y Musica";
+>>>>>>> da18d6e7d60b261b21520c9e232995b531547e55:app-web/src/components/Chat.jsx
   };
 
   // Manejar el envío de mensajes
   const handleSend = async (text) => {
+    text = text.replace(/<br>/gi, ' ').trim()
+    console.log(text);
     const newMessage = {
       message: text,
       sentTime: "justo ahora",
@@ -141,15 +137,26 @@ const Chat = ({ messages, setMessages }) => {
 
     // Procesar la respuesta del chatbot
     const response = await processQuery(text);
+
+    text = text.toLowerCase();
+
     setMessages((prevMessages) => [
       ...prevMessages,
       {
-        message: response,
+        message: text.includes('ejemplo') || text.includes('example') ? `<strong>${response}</strong>` : `${response}`,
         sentTime: "justo ahora",
         sender: "Chatbot",
       },
     ]);
   };
+
+  const handleStarClick = () => {
+    window.open("https://github.com/David15Barrera/IA1_Proyecto_14", "_blank"); // Cambia el enlace a tu URL externa
+  };
+
+  const handleInfoClick = () => {
+    window.open("https://docs.google.com/document/d/1LMlRCXIJDtd6WjROhLJ9EWjPF22yaBZnxbYc1hWmCOc/edit?usp=sharing", "_blank"); // Cambia el enlace a tu URL externa
+  }
 
   return (
     <div className="w-full flex justify-center items-start h-screen mt-2">
@@ -178,7 +185,7 @@ const Chat = ({ messages, setMessages }) => {
             >
               <Avatar
                 name="Emily"
-                title="Emely Chat Bot IA"
+                title="Emily"
                 src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
                 style={{
                   padding: "4px",
@@ -193,12 +200,12 @@ const Chat = ({ messages, setMessages }) => {
                     color: '#fff'
                   }}
                 >
-                  Emely Chat Bot
+                  Emily ChatBot de Python y Javascript
                 </span>
               </ConversationHeader.Content>
               <ConversationHeader.Actions>
-                <StarButton title="Add to favourites" />
-                <InfoButton title="Show info" />
+                <StarButton title="Ver Codigo Fuente en GitHub" onClick={handleStarClick} />
+                <InfoButton title="Ver Manual de Usuario" onClick={handleInfoClick} />
               </ConversationHeader.Actions>
             </ConversationHeader>
             <MessageList typingIndicator={<TypingIndicator
@@ -222,7 +229,8 @@ const Chat = ({ messages, setMessages }) => {
                     sentTime: msg.sentTime,
                     sender: msg.sender,
                     direction: msg.sender === "Usuario" ? "outgoing" : "incoming",
-                    position: "normal",
+                    position: "single",
+                    type: "html"
                   }}
                 >
                   {msg.sender !== "Usuario" && (
@@ -237,8 +245,9 @@ const Chat = ({ messages, setMessages }) => {
             <MessageInput
               placeholder="Escribe tu mensaje aquí..."
               onSend={handleSend}
-              attachButton={false}
+              attachButton={true}
               autoFocus
+              typeof="text"
               style={{
                 borderTop: "1px solid #444",
                 backgroundColor: "#1e1e1e",

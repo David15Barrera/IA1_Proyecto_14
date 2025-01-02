@@ -7,6 +7,8 @@ from tensorflow.keras.optimizers import SGD
 import nltk
 from nltk.stem import WordNetLemmatizer
 import random
+import matplotlib.pyplot as plt
+from collections import Counter
 
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
@@ -25,6 +27,7 @@ def load_intents(file_paths):
 file_paths = ['faqdata.json', 'faqdataEn.json']
 intents = load_intents(file_paths)
 
+# Procesar datos
 words = []
 classes = []
 documents = []
@@ -45,6 +48,10 @@ classes = sorted(list(set(classes)))
 
 pickle.dump(words, open('words.pkl', 'wb'))
 pickle.dump(classes, open('classes.pkl', 'wb'))
+
+# Validar distribución de intenciones
+intent_tags = [doc[1] for doc in documents]
+print("Distribución de las intenciones:", Counter(intent_tags))
 
 # Preparar datos de entrenamiento
 training = []
@@ -68,9 +75,11 @@ training = np.array(training, dtype=object)
 train_x = np.array([item[0] for item in training])
 train_y = np.array([item[1] for item in training])
 
-# Crear modelo
+# Crear modelo mejorado
 model = Sequential()
-model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dense(256, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
@@ -80,8 +89,29 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# Entrenar modelo
-model.fit(np.array(train_x), np.array(train_y), epochs=100, batch_size=8, verbose=1)
-model.save('chatbot_model.h5')
+# Entrenar modelo con validación
+history = model.fit(
+    np.array(train_x),
+    np.array(train_y),
+    epochs=200,
+    batch_size=16,
+    verbose=1,
+    validation_split=0.2  # Usar 20% de los datos para validación
+)
 
+# Guardar modelo
+model.save('chatbot_model.h5')
 print("Modelo creado y guardado correctamente.")
+
+# Graficar métricas de entrenamiento
+plt.plot(history.history['accuracy'], label='Precisión de entrenamiento')
+plt.plot(history.history['val_accuracy'], label='Precisión de validación')
+plt.legend()
+plt.title('Precisión')
+plt.show()
+
+plt.plot(history.history['loss'], label='Pérdida de entrenamiento')
+plt.plot(history.history['val_loss'], label='Pérdida de validación')
+plt.legend()
+plt.title('Pérdida')
+plt.show()

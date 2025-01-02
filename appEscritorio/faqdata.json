@@ -2,7 +2,7 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hello", "Hi", "Hey", "Hola", "Good morning", "Good evening", "What's up?", "How are you?"],
+      "patterns": ["Hello", "Hi", "Hey", "Good morning", "Good evening", "What's up?", "How are you?"],
       "responses": ["Hello! Let's talk about JavaScript and Python.", "Hi there! What do you want to know about programming?", "Hey! How can I assist you with JavaScript or Python?"],
       "context": [""]
     },
@@ -87,6 +87,135 @@
       "tag": "goodbye",
       "patterns": ["Goodbye", "Bye", "See you later", "Talk to you soon", "Thanks, goodbye", "Catch you later"],
       "responses": ["Goodbye! Keep learning JavaScript and Python!", "Bye! Don't forget to practice coding.", "See you! Happy programming!"],
+      "context": [""]
+    },
+    {
+      "tag": "bubble_sort_algorithm",
+      "patterns": [
+        "Give me the bubble sort algorithm in Python",
+        "How to implement bubble sort in JavaScript?",
+        "Explain bubble sort in Python",
+        "Bubble sort in JavaScript",
+        "Can you provide bubble sort?"
+      ],
+      "responses": [
+        "Here is the bubble sort code in Python:\n```python\ndef bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\nprint(bubble_sort([64, 34, 25, 12, 22, 11, 90]))\n```",
+        "Here is the bubble sort code in JavaScript:\n```javascript\nfunction bubbleSort(arr) {\n  let n = arr.length;\n  for (let i = 0; i < n; i++) {\n    for (let j = 0; j < n - i - 1; j++) {\n      if (arr[j] > arr[j + 1]) {\n        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];\n      }\n    }\n  }\n  return arr;\n}\nconsole.log(bubbleSort([64, 34, 25, 12, 22, 11, 90]));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "factorial_algorithm",
+      "patterns": [
+        "Give me the factorial algorithm in Python",
+        "How to calculate factorial in JavaScript?",
+        "Factorial in Python",
+        "Explain the factorial algorithm in JavaScript",
+        "Factorial in JavaScript"
+      ],
+      "responses": [
+        "Here is the factorial code in Python:\n```python\ndef factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n-1)\nprint(factorial(5))\n```",
+        "Here is the factorial code in JavaScript:\n```javascript\nfunction factorial(n) {\n  if (n === 0) return 1;\n  return n * factorial(n - 1);\n}\nconsole.log(factorial(5));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "linear_search_algorithm",
+      "patterns": [
+        "Give me the linear search algorithm in Python",
+        "How to implement linear search in JavaScript?",
+        "Explain linear search in Python",
+        "Linear search in JavaScript",
+        "Can you provide linear search?"
+      ],
+      "responses": [
+        "Here is the linear search code in Python:\n```python\ndef linear_search(arr, x):\n    for i in range(len(arr)):\n        if arr[i] == x:\n            return i\n    return -1\narr = [2, 4, 6, 8, 10]\nx = 6\nprint(linear_search(arr, x))\n```",
+        "Here is the linear search code in JavaScript:\n```javascript\nfunction linearSearch(arr, x) {\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] === x) return i;\n  }\n  return -1;\n}\nlet arr = [2, 4, 6, 8, 10];\nlet x = 6;\nconsole.log(linearSearch(arr, x));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "binary_search_algorithm",
+      "patterns": [
+        "Give me the binary search algorithm in Python",
+        "Explain binary search in JavaScript",
+        "Binary search in Python",
+        "How to implement binary search in JavaScript?"
+      ],
+      "responses": [
+        "Here is the binary search code in Python:\n```python\ndef binary_search(arr, x):\n    start, end = 0, len(arr) - 1\n    while start <= end:\n        mid = (start + end) // 2\n        if arr[mid] == x:\n            return mid\n        elif arr[mid] < x:\n            start = mid + 1\n        else:\n            end = mid - 1\n    return -1\narr = [2, 3, 4, 10, 40]\nx = 10\nprint(binary_search(arr, x))\n```",
+        "Here is the binary search code in JavaScript:\n```javascript\nfunction binarySearch(arr, x) {\n  let start = 0;\n  let end = arr.length - 1;\n  while (start <= end) {\n    let mid = Math.floor((start + end) / 2);\n    if (arr[mid] === x) return mid;\n    else if (arr[mid] < x) start = mid + 1;\n    else end = mid - 1;\n  }\n  return -1;\n}\nlet arr = [2, 3, 4, 10, 40];\nlet x = 10;\nconsole.log(binarySearch(arr, x));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "power_algorithm",
+      "patterns": [
+        "Give me the power algorithm in Python",
+        "How to calculate power in JavaScript?",
+        "Explain power in Python",
+        "Power in JavaScript"
+      ],
+      "responses": [
+        "Here is the code to calculate power in Python:\n```python\ndef power(base, exponent):\n    return base ** exponent\nprint(power(2, 3))\n```",
+        "Here is the code to calculate power in JavaScript:\n```javascript\nfunction power(base, exponent) {\n  return Math.pow(base, exponent);\n}\nconsole.log(power(2, 3));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "sum_algorithm",
+      "patterns": [
+        "Give me an algorithm to sum numbers in Python",
+        "How to sum numbers in JavaScript?",
+        "Sum of numbers in Python",
+        "Explain how to sum numbers in JavaScript"
+      ],
+      "responses": [
+        "Here is the code to sum numbers in Python:\n```python\n# Sum two numbers\ndef sum_numbers(a, b):\n    return a + b\nprint(sum_numbers(3, 5))\n```",
+        "Here is the code to sum numbers in JavaScript:\n```javascript\n// Sum two numbers\nfunction sumNumbers(a, b) {\n  return a + b;\n}\nconsole.log(sumNumbers(3, 5));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "average_algorithm",
+      "patterns": [
+        "Give me an algorithm to calculate the average in Python",
+        "How to calculate the average in JavaScript?",
+        "Average in Python",
+        "Explain how to calculate the average in JavaScript"
+      ],
+      "responses": [
+        "Here is the code to calculate the average in Python:\n```python\n# Calculate the average of a list of numbers\ndef calculate_average(numbers):\n    return sum(numbers) / len(numbers)\nnumbers = [3, 5, 7, 9]\nprint(calculate_average(numbers))\n```",
+        "Here is the code to calculate the average in JavaScript:\n```javascript\n// Calculate the average of an array of numbers\nfunction calculateAverage(numbers) {\n  const total = numbers.reduce((sum, num) => sum + num, 0);\n  return total / numbers.length;\n}\nconst numbers = [3, 5, 7, 9];\nconsole.log(calculateAverage(numbers));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "max_number_algorithm",
+      "patterns": [
+        "Give me an algorithm to find the maximum number in Python",
+        "How to find the largest number in JavaScript?",
+        "Maximum number in Python",
+        "Explain how to find the largest number in JavaScript"
+      ],
+      "responses": [
+        "Here is the code to find the maximum number in Python:\n```python\n# Find the maximum number in a list\ndef find_maximum(numbers):\n    return max(numbers)\nnumbers = [3, 5, 7, 9]\nprint(find_maximum(numbers))\n```",
+        "Here is the code to find the maximum number in JavaScript:\n```javascript\n// Find the maximum number in an array\nfunction findMaximum(numbers) {\n  return Math.max(...numbers);\n}\nconst numbers = [3, 5, 7, 9];\nconsole.log(findMaximum(numbers));\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "min_number_algorithm",
+      "patterns": [
+        "Give me an algorithm to find the minimum number in Python",
+        "How to find the smallest number in JavaScript?",
+        "Minimum number in Python",
+        "Explain how to find the smallest number in JavaScript"
+      ],
+      "responses": [
+        "Here is the code to find the minimum number in Python:\n```python\n# Find the minimum number in a list\ndef find_minimum(numbers):\n    return min(numbers)\nnumbers = [3, 5, 7, 9]\nprint(find_minimum(numbers))\n```",
+        "Here is the code to find the minimum number in JavaScript:\n```javascript\n// Find the minimum number in an array\nfunction findMinimum(numbers) {\n  return Math.min(...numbers);\n}\nconst numbers = [3, 5, 7, 9];\nconsole.log(findMinimum(numbers));\n```"
+      ],
       "context": [""]
     }
   ]
