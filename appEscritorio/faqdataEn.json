@@ -122,6 +122,30 @@
       "context": [""]
     },
     {
+      "tag": "bubble_sort_intercambio",
+      "patterns": [
+        "Dame la parte de intercambio de dígitos en el algoritmo BubbleSort en Python",
+        "¿Cómo se hace el intercambio en BubbleSort?",
+        "Enséñame la sección de intercambio en BubbleSort en Python"
+      ],
+      "responses": [
+        "En Python, la parte de intercambio en el algoritmo BubbleSort es esta:\n```python\nif arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]\n    swapped = True\n```"
+      ],
+      "context": ["algoritmo_bubble_sort"]
+    },
+    {
+      "tag": "bubble_sort_deteccion_ordenado",
+      "patterns": [
+        "Dame la parte de detección de lista ordenada en BubbleSort en Python",
+        "¿Cómo se detecta si la lista ya está ordenada en BubbleSort?",
+        "Explícame la parte de detección de orden en BubbleSort en Python"
+      ],
+      "responses": [
+        "En Python, la parte de detección de una lista ya ordenada es esta:\n```python\nif not swapped: break\n```"
+      ],
+      "context": ["algoritmo_bubble_sort"]
+    },
+    {
       "tag": "algoritmo_factorial",
       "patterns": [
         "Dame el algoritmo factorial en Python",
@@ -137,6 +161,31 @@
       "context": [""]
     },
     {
+      "tag": "factorial_condicion_base",
+      "patterns": [
+        "Dame la condición base en el algoritmo de factorial en Python",
+        "¿Cuál es la condición base del factorial en JavaScript?",
+        "Explica la base del factorial en Python"
+      ],
+      "responses": [
+        "En Python, la condición base para calcular el factorial es esta:\n```python\nif n == 0:\n    return 1\n```"
+      ],
+      "context": ["algoritmo_factorial"]
+    },
+    {
+      "tag": "factorial_caso_recursivo",
+      "patterns": [
+        "Explica el caso recursivo del factorial en Python",
+        "¿Cómo funciona la recursión en el algoritmo de factorial?",
+        "Dame la parte recursiva del factorial en JavaScript"
+      ],
+      "responses": [
+        "En Python, la parte recursiva del algoritmo de factorial es esta:\n```python\nreturn n * factorial(n-1)\n```",
+        "En JavaScript, la parte recursiva del algoritmo de factorial es esta:\n```javascript\nreturn n * factorial(n - 1);\n```"
+      ],
+      "context": ["algoritmo_factorial"]
+    },
+    {
       "tag": "algoritmo_busqueda_lineal",
       "patterns": [
         "Dame el algoritmo de búsqueda lineal en Python",
@@ -150,6 +199,42 @@
         "Este es el código de búsqueda lineal en JavaScript:\n```javascript\nfunction linearSearch(arr, x) {\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] === x) return i;\n  }\n  return -1;\n}\nlet arr = [2, 4, 6, 8, 10];\nlet x = 6;\nconsole.log(linearSearch(arr, x));\n```"
       ],
       "context": [""]
+    },
+    {
+      "tag": "busqueda_lineal_condicion_encontrar",
+      "patterns": [
+        "Dame la parte que compara elementos en búsqueda lineal en Python",
+        "¿Cómo se verifica si un elemento coincide en búsqueda lineal?",
+        "Enséñame la condición de comparación en búsqueda lineal en Python"
+      ],
+      "responses": [
+        "En Python, la condición para encontrar el elemento es esta:\n```python\nif arr[i] == x:\n    return i\n```"
+      ],
+      "context": ["algoritmo_busqueda_lineal"]
+    },
+    {
+      "tag": "busqueda_lineal_recorrido",
+      "patterns": [
+        "Explícame cómo se recorren los elementos en búsqueda lineal",
+        "¿Cómo se itera sobre la lista en búsqueda lineal?",
+        "Dame el bucle que recorre la lista en búsqueda lineal en Python"
+      ],
+      "responses": [
+        "En Python, el bucle para recorrer los elementos en búsqueda lineal es este:\n```python\nfor i in range(len(arr)):\n```"
+      ],
+      "context": ["algoritmo_busqueda_lineal"]
+    },
+    {
+      "tag": "busqueda_lineal_no_encontrado",
+      "patterns": [
+        "¿Qué sucede si no se encuentra el elemento en búsqueda lineal?",
+        "Dame el caso en el que búsqueda lineal no encuentra el elemento",
+        "Explícame la salida cuando no hay coincidencia en búsqueda lineal"
+      ],
+      "responses": [
+        "En Python, si el elemento no se encuentra, se devuelve esto:\n```python\nreturn -1\n```"
+      ],
+      "context": ["algoritmo_busqueda_lineal"]
     },
       {
       "tag": "algoritmo_busqueda_binaria",

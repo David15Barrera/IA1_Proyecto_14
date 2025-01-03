@@ -122,6 +122,30 @@
       "context": [""]
     },
     {
+      "tag": "bubble_sort_swap",
+      "patterns": [
+        "Give me the swapping part of the BubbleSort algorithm in Python",
+        "How is swapping done in BubbleSort?",
+        "Show me the swapping section in BubbleSort in Python"
+      ],
+      "responses": [
+        "In Python, the swapping part of the BubbleSort algorithm is this:\n```python\nif arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]\n    swapped = True\n```"
+      ],
+      "context": ["bubble_sort_algorithm"]
+    },
+    {
+      "tag": "bubble_sort_detection_sorted",
+      "patterns": [
+        "Give me the detection part for a sorted list in BubbleSort in Python",
+        "How is it detected if the list is already sorted in BubbleSort?",
+        "Explain the detection of order in BubbleSort in Python"
+      ],
+      "responses": [
+        "In Python, the part to detect if a list is already sorted is this:\n```python\nif not swapped: break\n```"
+      ],
+      "context": ["bubble_sort_algorithm"]
+    },
+    {
       "tag": "factorial_algorithm",
       "patterns": [
         "Give me the factorial algorithm in Python",
@@ -135,6 +159,31 @@
         "Here is the factorial code in JavaScript:\n```javascript\nfunction factorial(n) {\n  if (n === 0) return 1;\n  return n * factorial(n - 1);\n}\nconsole.log(factorial(5));\n```"
       ],
       "context": [""]
+    },
+    {
+      "tag": "factorial_base_condition",
+      "patterns": [
+        "Give me the base condition in the factorial algorithm in Python",
+        "What is the base condition of the factorial in JavaScript?",
+        "Explain the base of the factorial in Python"
+      ],
+      "responses": [
+        "In Python, the base condition for calculating the factorial is this:\n```python\nif n == 0:\n    return 1\n```"
+      ],
+      "context": ["factorial_algorithm"]
+    },
+    {
+      "tag": "factorial_recursive_case",
+      "patterns": [
+        "Explain the recursive case of the factorial in Python",
+        "How does recursion work in the factorial algorithm?",
+        "Give me the recursive part of the factorial in JavaScript"
+      ],
+      "responses": [
+        "In Python, the recursive part of the factorial algorithm is this:\n```python\nreturn n * factorial(n-1)\n```",
+        "In JavaScript, the recursive part of the factorial algorithm is this:\n```javascript\nreturn n * factorial(n - 1);\n```"
+      ],
+      "context": ["factorial_algorithm"]
     },
     {
       "tag": "linear_search_algorithm",
@@ -151,6 +200,42 @@
       ],
       "context": [""]
     },
+    {
+  "tag": "linear_search_condition_found",
+  "patterns": [
+    "Give me the part that compares elements in linear search in Python",
+    "How do you check if an element matches in linear search?",
+    "Show me the comparison condition in linear search in Python"
+  ],
+  "responses": [
+    "In Python, the condition to find the element is this:\n```python\nif arr[i] == x:\n    return i\n```"
+  ],
+  "context": ["linear_search_algorithm"]
+},
+{
+  "tag": "linear_search_traversal",
+  "patterns": [
+    "Explain how elements are traversed in linear search",
+    "How do you iterate over the list in linear search?",
+    "Give me the loop that traverses the list in linear search in Python"
+  ],
+  "responses": [
+    "In Python, the loop to traverse elements in linear search is this:\n```python\nfor i in range(len(arr)):\n```"
+  ],
+  "context": ["linear_search_algorithm"]
+},
+{
+  "tag": "linear_search_not_found",
+  "patterns": [
+    "What happens if the element is not found in linear search?",
+    "Give me the case when linear search doesn't find the element",
+    "Explain the output when there's no match in linear search"
+  ],
+  "responses": [
+    "In Python, if the element is not found, it returns this:\n```python\nreturn -1\n```"
+  ],
+  "context": ["linear_search_algorithm"]
+},
     {
       "tag": "binary_search_algorithm",
       "patterns": [
