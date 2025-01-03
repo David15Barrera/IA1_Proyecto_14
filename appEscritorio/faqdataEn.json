@@ -146,6 +146,19 @@
       "context": ["algoritmo_bubble_sort"]
     },
     {
+      "tag": "intercambio_burbuja",
+      "patterns": [
+        "Dame la parte de intercambio del ordenamiento burbuja en Python",
+        "Muéstrame la sección de intercambio del ordenamiento burbuja",
+        "¿Cómo funciona el intercambio en el ordenamiento burbuja?",
+        "Explica el intercambio en el ordenamiento burbuja"
+      ],
+      "responses": [
+        "En el algoritmo de ordenamiento burbuja, el intercambio de dos elementos se realiza así:\n```python\narr[j], arr[j+1] = arr[j+1], arr[j]\n```"
+      ],
+      "context": [""]
+    },    
+    {
       "tag": "algoritmo_factorial",
       "patterns": [
         "Dame el algoritmo factorial en Python",
@@ -160,6 +173,30 @@
       ],
       "context": [""]
     },
+    {
+      "tag": "caso_base_factorial",
+      "patterns": [
+        "¿Cuál es el caso base del algoritmo factorial?",
+        "Explica el caso base en la función factorial",
+        "¿Cómo funciona el caso base en el factorial?"
+      ],
+      "responses": [
+        "En Python y JavaScript, el caso base para la función factorial es cuando `n` es igual a 0, y devuelve 1. Esto previene la recursión infinita.\n\nPython:\n```python\nif n == 0:\n    return 1\n```\nJavaScript:\n```javascript\nif (n === 0) return 1;\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "multiplicacion_recursiva_factorial",
+      "patterns": [
+        "¿Cómo funciona la multiplicación recursiva en el algoritmo factorial?",
+        "Explica el paso de multiplicación en la función factorial",
+        "¿Cuál es la parte de multiplicación en el factorial?"
+      ],
+      "responses": [
+        "La multiplicación recursiva en el algoritmo factorial es cuando la función se llama a sí misma con `n-1` y lo multiplica por `n`.\n\nPython:\n```python\nreturn n * factorial(n-1)\n```\nJavaScript:\n```javascript\nreturn n * factorial(n - 1);\n```"
+      ],
+      "context": [""]
+    },        
     {
       "tag": "factorial_condicion_base",
       "patterns": [

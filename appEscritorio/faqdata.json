@@ -173,6 +173,19 @@
       "context": ["factorial_algorithm"]
     },
     {
+      "tag": "bubble_sort_swap",
+      "patterns": [
+        "Give me the swap part of the bubble sort in Python",
+        "Show me the swapping section of bubble sort",
+        "How does swapping work in bubble sort?",
+        "Explain the swap in bubble sort"
+      ],
+      "responses": [
+        "In the bubble sort algorithm, swapping two elements is done like this:\n```python\narr[j], arr[j+1] = arr[j+1], arr[j]\n```"
+      ],
+      "context": [""]
+    },    
+    {
       "tag": "factorial_recursive_case",
       "patterns": [
         "Explain the recursive case of the factorial in Python",
@@ -185,6 +198,30 @@
       ],
       "context": ["factorial_algorithm"]
     },
+    {
+      "tag": "factorial_base_case",
+      "patterns": [
+        "What is the base case of the factorial algorithm?",
+        "Explain the base case in the factorial function",
+        "How does the base case work in factorial?"
+      ],
+      "responses": [
+        "In both Python and JavaScript, the base case for the factorial function is when `n` equals 0, and it returns 1. This prevents infinite recursion.\n\nPython:\n```python\nif n == 0:\n    return 1\n```\nJavaScript:\n```javascript\nif (n === 0) return 1;\n```"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "factorial_recursive_multiplication",
+      "patterns": [
+        "How does the recursive multiplication work in the factorial algorithm?",
+        "Explain the multiplication step in the factorial function",
+        "What is the multiplication part in factorial?"
+      ],
+      "responses": [
+        "The recursive multiplication in the factorial algorithm is where the function calls itself with `n-1` and multiplies it by `n`.\n\nPython:\n```python\nreturn n * factorial(n-1)\n```\nJavaScript:\n```javascript\nreturn n * factorial(n - 1);\n```"
+      ],
+      "context": [""]
+    },        
     {
       "tag": "linear_search_algorithm",
       "patterns": [
