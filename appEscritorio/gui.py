@@ -57,12 +57,12 @@ def borrar_chat():
         widget.destroy()
 
 # Mensaje inicial
-MENSAJE_INICIAL = "Emily: ¡Hola! Soy Emily, un chatbot asistente en Python, JavaScript, Libros y Música. ¿En qué puedo ayudarte?"
+MENSAJE_INICIAL = "Emily: ¡Hola! Soy Emily, un chatbot asistente en Python, JavaScript y Música. ¿En qué puedo ayudarte?"
 
 # Configuración de la ventana principal
 base = tk.Tk()
 base.title("Emily ChatBot")
-base.geometry("800x900")
+base.geometry("800x700")
 base.configure(bg="#1E262C")  # Fondo principal oscuro
 base.resizable(width=False, height=False)
 
