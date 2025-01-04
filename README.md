@@ -17,7 +17,7 @@ Antes de instalar y ejecutar el chatbot, asegúrate de cumplir con los siguiente
 ## **Clona el repositorio
 git clone[ https://github.com/David15Barrera/IA1_Proyecto_14 ]
 
-## **cd tu_repositorio
+## **cd IA1_Proyecto_14
 **Crea un entorno virtual**
 ``` bash 
 virtualenv venv
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 Empaqueta e instala el proyecto Ejecuta los siguientes comandos para crear e instalar el paquete.
 ```bash
 python setup.py sdist bdist_wheel
-pip install dist/tu_chatbot-1.0.0-py3-none-any.whl
+pip install dist/mi_chatbot-1.0.0-py3-none-any.whl
 ```
 
 ## **Configuraciones Adicionales
