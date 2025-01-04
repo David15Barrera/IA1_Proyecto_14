@@ -1,0 +1,16 @@
+MANIFEST.in
+faqdata.json
+faqdataEn.json
+setup.py
+/home/david/Documentos/IA1/IA1_Proyecto_14/appEscritorio/my_chatbot_app.egg-info/PKG-INFO
+/home/david/Documentos/IA1/IA1_Proyecto_14/appEscritorio/my_chatbot_app.egg-info/SOURCES.txt
+/home/david/Documentos/IA1/IA1_Proyecto_14/appEscritorio/my_chatbot_app.egg-info/dependency_links.txt
+/home/david/Documentos/IA1/IA1_Proyecto_14/appEscritorio/my_chatbot_app.egg-info/entry_points.txt
+/home/david/Documentos/IA1/IA1_Proyecto_14/appEscritorio/my_chatbot_app.egg-info/requires.txt
+/home/david/Documentos/IA1/IA1_Proyecto_14/appEscritorio/my_chatbot_app.egg-info/top_level.txt
+my_chatbot_app.egg-info/PKG-INFO
+my_chatbot_app.egg-info/SOURCES.txt
+my_chatbot_app.egg-info/dependency_links.txt
+my_chatbot_app.egg-info/entry_points.txt
+my_chatbot_app.egg-info/requires.txt
+my_chatbot_app.egg-info/top_level.txt
