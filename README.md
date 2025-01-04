@@ -15,7 +15,7 @@ Antes de instalar y ejecutar el chatbot, asegúrate de cumplir con los siguiente
    sudo apt install python3-pip
 
 ## **Clona el repositorio
-git clone[ https://github.com/tu_usuario/tu_repositorio.git](https://github.com/David15Barrera/IA1_Proyecto_14)
+git clone[ https://github.com/David15Barrera/IA1_Proyecto_14 ]
 
 ## **cd tu_repositorio
 **Crea un entorno virtual**
